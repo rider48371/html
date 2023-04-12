@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS3 Animation</title>
+		<style>
+			#div1{
+				background: orange;
+				border: 1px solid black;
+				width: 200px;
+				height: 200px;
+				margin: 10px;
+				animation: anim1 2s;
+			}
+			#div2{
+				background: orange;
+				border: 1px solid black;
+				width: 200px;
+				height: 200px;
+				margin: 10px;
+				animation: anim2 5s;
+				border-radius: 0;
+				animation-iteration-count: 2
+			}
+			#div3{
+				background: orange;
+				border: 1px solid black;
+				width: 200px;
+				height: 200px;
+				margin: 10px;
+				animation: anim3 10s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+			@keyframes anim1 {
+				from{background: orange;}
+				to{background: red;}
+			}
+			@keyframes anim2 {
+				0% {background: orange; border-radius: 0;}
+				25% {background: red; border-radius: 45px;}
+				50% {background: brown; border-radius: 90px;}
+				75% {background: green; border-radius: 45px;}
+				100% {background: orange; border-radius: 0;}
+			}
+			@keyframes anim3 {
+				0% {background: orange; width: 200px;}
+				25% {background: red; width: 300px;}
+				50% {background: brown; width: 400px;}
+				75% {background: green; width: 300px;}
+				100% {background: orange; width: 200px;}
+			}
+			a {
+				color:blue;
+			}
+			a:hover {
+				color:green;
+				transition:1s;
+			}
+		</style>
+	</head>
+	<body>
+	<a href="../html/links.html">Links</a>
+	<a href="../master project/index.html">Master</a><br><br>
+		<div id="div1"></div>
+		<div id="div2"></div>
+		<div id="div3"></div>
+	</body>
+</html>

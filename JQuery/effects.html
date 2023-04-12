@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn JQuery</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br>
+		<script src="jquery.js"></script>
+		<script>
+		//First () is for the selecter. After the . is for the event or the effect. 
+		//Effects: toggle, show, hide, fadeOut, fadeIn, fadeToggle, slideUp, slideDown, slideToggle
+			$(document).ready(function(){
+				//JQuery codes must be here
+				$('#div1').click(function(){
+					$('#div2').toggle();
+				});
+				$('#div3').click(function(){
+					$('#div4').fadeToggle();
+				});
+				$('#div5').click(function(){
+					$('#div6').slideToggle();
+				});
+			});
+		</script>
+		<style>
+			.main{
+				margin:10px;
+				float:left;
+			}
+			.head_style{
+				background: orange; 
+				width: 200px; 
+				height: 100px;
+				text-align: center;
+			}
+			.body_style{
+				background: green; 
+				width: 200px; 
+				height: 300px;
+			}
+		</style>
+		<br>
+	</head>
+	<body>
+		<div class="main">
+			<div id="div1" class="head_style">Click to Toggle</div>
+			<div id="div2" class="body_style"></div>
+		</div>
+		<div class="main">
+			<div id="div3" class="head_style">Click to Fade</div>
+			<div id="div4" class="body_style"></div>
+		</div>
+		<div class="main">
+			<div id="div5" class="head_style">Click to Slide</div>
+			<div id="div6" class="body_style" dis></div>
+		</div>
+	</body>
+</html>

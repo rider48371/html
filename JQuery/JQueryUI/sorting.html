@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Learn JQueryUI</title>
+		<a href="../../html/links.html">Links</a>
+		<a href="../../master project/index.html">Master</a><br>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<script>
+			$(document).ready(function(){
+				$('#main_div, #main_div2').sortable({
+					connectWith: '.linking'
+				});
+			});
+		</script>
+		<style>
+			body{
+				padding:50px;
+			}
+			#div1{
+				background:red; border:black 2px solid; width:200px; height:200px;
+			}
+			#div3{
+				background:orange; border:black 2px solid; width:200px; height:200px;
+			}
+			#div2{
+				border:black 2px solid; width:400px; height:400px; float:right;
+			}
+			#main_div{
+				float:left; border:1px solid silver; padding:20px; margin-right:20px; width:250px;
+			}
+			#main_div2{
+				float:left; border:1px solid silver; padding:20px; width:250px;
+			}
+			.div1 {
+				background:silver; text-align:center; border:1px solid black; width:200px; height:40px;margin:20px;
+			}
+			.div2 {
+				background:orange; text-align:center; border:1px solid black; width:200px; height:40px;margin:20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main_div" class="linking">
+			<div class="div1">A</div>
+			<div class="div1">B</div>
+			<div class="div1">C</div>
+			<div class="div1">D</div>
+		</div>
+		<div id="main_div2" class="linking">
+			<div class="div2">1</div>
+			<div class="div2">2</div>
+			<div class="div2">3</div>
+			<div class="div2">4</div>
+		</div>
+	</body>
+</html>

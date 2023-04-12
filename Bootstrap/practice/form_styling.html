@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn Bootstrap</title>
+		<link rel="stylesheet" href="../css/bootstrap.css">
+		<link red="stylesheet" href="../css/font-awesome.css">
+		<script src="../js/jquery.js"></script>
+		<script src="../js/bootstrap.js"></script>
+	</head>
+	<body>
+	<a href="../../html/links.html">links</a>
+	<a href="../../master project/index.html">Master</a><br><br>
+		<div class="container">
+			<div class="page-header">
+				<h2>The Bootstrap Styled Form</h2>
+			</div>
+			<form>
+				<div class="form-group">
+					<label for="user">User Name</label>
+					<input id="user" type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="pass">Password</label>
+					<input id="pass" type="password" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Skills</label>
+					<div class="checkbox">
+					<label><input type="checkbox" value="html">HTML</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" value="php">PHP</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" value="java">Javascript</label>
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" value="jquery">JQuery</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Skills</label>
+					<label class="checkbox-inline"><input type="checkbox" value="html">HTML</label>
+					<label class="checkbox-inline"><input type="checkbox" value="php">PHP</label>
+					<label class="checkbox-inline"><input type="checkbox" value="java">Javascript</label>
+					<label class="checkbox-inline"><input type="checkbox" value="jquery">JQuery</label>
+				</div>
+				<div class="form-group">
+					<label>Gender</label>
+					<div class="radio">
+					<label><input type="radio" name="gender" value="male">Male</label>
+					</div>
+					<div class="radio">
+						<label><input type="radio" name="gender" value="female">Female</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Gender</label>
+					<label class="radio-inline"><input type="radio" name="gender" value="male">Male</label>
+					<label class="radio-inline"><input type="radio" name="gender" value="female">Female</label>
+				</div>
+				<div class="form-group">
+					<label>Select Your Country</label>
+					<select class="form-control">
+						<option>United States</option>
+						<option>Russia</option>
+						<option>India</option>
+						<option>Canada</option>
+						<option>Korea</option>
+						<option>China</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Comments</label>
+					<textarea class="form-control"></textarea>
+				</div>
+			</form>
+			<h2>The Horizontal Form</h2>
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label class="col-md-2 control-label">User Name</label>
+					<div class="col-md-10">
+						<input type="text" class="form-control">
+					</div>
+				</div>
+				<div class="form-horizontal">
+					<label class="col-md-2 control-label">Password</label>
+					<div class="col-md-10">
+						<input type="password" class="form-control">
+					</div>
+				</div><br><br><br><br>
+				<div class="form-group">
+					<div class="col-md-2 col-md-offset-2">
+						<button class="btn btn-success btn-block">Click Me</button>
+					</div>
+				</div>
+			</form>
+			<h2>The Inline Form</h2>
+			<form class="form-inline">
+				<div class="form-group">
+					<label>User Name</label>
+					<input type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input type="password" class="form-control">
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

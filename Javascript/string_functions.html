@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn Javascript</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br><br>
+		<script>
+			var var1='Hello World',
+				var4='This is a big paragraph'
+				var5='This is a big paragraph. There are a lot more big paragraphs'
+				var2=var1.toUpperCase(),
+				var3=var1.replace('World', 'Class')
+				ans4=var1.slice(0,5)
+				ans5=var1.slice(6,11)
+				ans6=var4.slice(-13,-10)
+				ans7=var1.substring(6,11)
+				//substring is very similar to slice, but with slice you can actually go from the end of the sentence with a - number backward, but the substring does not allow this.
+				ans8=var1.substr(6,5)
+				//for substr, first number is the position of the beginning letter, in this instance it is the 6th character, and the second number is how many characters are you moving over.
+				ans9=var4.indexOf('big')
+				//Type out the whole word so that way it does not get confused with anything else. I.E. if we typed "a" it would pick up the first letter a and not necessarily the one that we want.
+				ans10=var5.lastIndexOf('big')
+			document.write(var1);
+			document.write('<br>');
+			document.write(var2);
+			document.write('<br>');
+			document.write(var1.toLowerCase());
+			document.write('<br>');
+			document.write(var3);
+			document.write('<br>');
+			document.write(ans4);
+			document.write('<br>');
+			document.write(ans5);
+			document.write('<br>');
+			document.write(var4);
+			document.write('<br>');
+			document.write(ans6);
+			document.write('<br>');
+			document.write(ans7);
+			document.write('<br>');
+			document.write(ans8);
+			document.write('<br>');
+			document.write(ans9);
+			document.write('<br>');
+			document.write(ans10);
+			document.write('<br>');
+		</script>
+	</head>
+	<body></body>
+</html>

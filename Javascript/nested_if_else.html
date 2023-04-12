@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn Javascript</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br><br>
+		<script>
+			var computer='yes',
+				laptop='yes',
+				model='2016',
+				ram='8GB',
+				hdd='1TB';
+			if(computer=='yes'){
+				if(laptop=='yes'){
+					if(model=='2016'){
+						if(ram=='8GB'){
+							if(hdd=='1TB'){
+								document.write('<p style="color:green">YES, we have what you need!!</p>')
+							}else{
+								document.write('Sorry, we have 8GB of Ram, but not with 1TB HDD')
+							}
+						}else{
+							document.write('We have 2016 models, but no 8GB Ram')
+						}
+					}else{
+						document.write('Sorry, we have laptops but older model&apos;s only')
+					}
+				}else{
+					document.write('This is the computer shop, but sorry, we don&apos;t have laptops')
+				}
+			} else{
+				document.write('Sorry, we don&apos;t have computers')
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

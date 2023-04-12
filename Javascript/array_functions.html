@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn Javascript</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br><br>
+		<script>
+			var arr_1=['Apple','Mango','Banana'];
+			document.write(arr_1.length);
+			//counts how many elements there are
+			document.write('<br>');
+			arr_1[arr_1.length]='Grapes';
+			//allows you to add an element to the end of the array
+			arr_1.unshift('Pineapple');
+			//adds an element to the beginning of the array.
+			document.write(arr_1)
+			arr_1.push('Orange');
+			//another way to add an element to the end of the array
+			document.write('<br>');
+			document.write(arr_1);
+			arr_1.pop();
+			//removes the last element from the array
+			document.write('<br>')
+			document.write(arr_1)
+			arr_1.shift();
+			//removes the first element from the array
+			document.write('<br>')
+			document.write(arr_1)
+			delete arr_1[2];
+			//choose which element you want to delete from your array
+			document.write('<br>')
+			document.write(arr_1)
+			arr_1.splice(2, 0, 'Lemon', 'Guava');
+			//put 3 values: where do you want to add the new element, do you want to delete any element, what are you adding?
+			document.write('<br>')
+			document.write(arr_1)
+			arr_1.splice(2,1);
+			//delete an array where you want. Where are you deleting and how many are you wanting to delete? Just won't add anything for the third part since we are not adding anything, only deleting. 
+			document.write('<br>')
+			document.write(arr_1)
+		</script>
+	</head>
+	<body></body>
+</html>

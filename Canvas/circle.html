@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>HTML5 Canvas</title>
+	</head>
+	<body>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br>
+		<canvas id="canvas1" width="200px" height="200px" style="border:2px solid black;"></canvas>
+		
+		<canvas id="canvas2" width="200px" height="200px" style="border:2px solid black;"></canvas>
+
+		<canvas id="canvas3" width="200px" height="200px" style="border:2px solid black;"></canvas>
+
+		<script>
+			c1 = document.getElementById('canvas1');
+			c1_x = c1.getContext('2d');
+			c1_x.fillStyle='orange';
+			c1_x.fillRect(50,10,200,100);
+			//c1_x.fillRect(left,top,width,height);
+
+			//Drawing the Line
+			c2 = document.getElementById('canvas2');
+			c2_x = c2.getContext('2d');
+			c2_x.beginPath();
+			c2_x.moveTo(50,50);
+			//c2_x.moveTo(left,top);
+			c2_x.lineTo(250,100);
+			c2_x.lineWidth=10;
+			c2_x.strokeStyle='red';
+			c2_x.lineCap='round';
+			c2_x.stroke();
+
+			//Drawing a circle
+			c3x=100;
+			c3y=100;
+			c3radius=100;
+			c3start_angle=0;
+			c3end_angle=2 * Math.PI;
+			c3 = document.getElementById('canvas3');
+			c3_x = c3.getContext('2d');
+			c2_x.beginPath();
+			c3_x.arc(c3x,c3y,c3radius,c3start_angle,c3end_angle);
+			c3_x.stroke();
+		</script>
+	</body>
+</html>

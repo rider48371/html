@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Learn JQueryUI</title>
+		<a href="../../html/links.html">Links</a>
+		<a href="../../master project/index.html">Master</a><br>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<script>
+			$(document).ready(function(){
+				$('#div1').resizable({
+					maxHeight:400,
+					maxWidth:400,
+					minWidth:200,
+					minHeight:200,
+					animate: true,
+				});
+			});
+		</script>
+		<style>
+			body{
+				padding:50px;
+			}
+			#div1{
+				background:red; border:black 2px solid; width:200px; height:200px;
+			}
+			#div3{
+				background:orange; border:black 2px solid; width:200px; height:200px;
+			}
+			#div2{
+				border:black 2px solid; width:400px; height:400px; float:right;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+	</body>
+</html>

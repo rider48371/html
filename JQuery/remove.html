@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn JQuery</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery_color.js"></script>
+		<script>
+		//First () is for the selecter. After the . is for the event or the effect. 
+		//Effects: toggle, show, hide, fadeOut, fadeIn, fadeToggle, slideUp, slideDown, slideToggle
+			$(document).ready(function(){
+				//JQuery codes must be here
+				$('#btn1').click(function(){
+					$('#para1').append('<p>Hello world</p>');
+				});
+				$('#btn2').click(function(){
+					$('#ol1').append('<li>New List Item</li>');
+				});
+				$('#btn3').click(function(){
+					$('#para1').prepend('<p>The new content</p>');
+				})
+				$('#btn4').click(function(){
+					$('#ol1').prepend('<li>New Content in List</li>');
+				});
+				$('#btn5').click(function(){
+					$('#para1').after('<p>Newest Content</p>');
+				});
+				$('#btn6').click(function(){
+					$('#para1').before('<p>Super!</p>');
+				});
+				$('#btn7').click(function(){
+					$('#para1').remove();
+				});
+				$('#btn8').click(function(){
+					$('#para1').empty();
+				});
+			});
+		</script>
+		<style>
+			.main{
+				margin:10px;
+			}
+			.body_style{
+				background: green; 
+				width: 300px; 
+				height: 300px;
+				margin:100px;
+				color: white;
+			}
+			#para1 {
+				background: blue;
+				color: white;
+				padding: 20px;
+			}
+		</style>
+		<br>
+	</head>
+	<body>
+		<div class="main">
+			<button id="btn1">Add more Content(After Inside)</button>
+			<button id="btn3">Add more Content (Before Inside)</button>
+			<button id="btn5">Add more Content After</button>
+			<button id="btn6">Add more Content Before</button>
+			<button id="btn2">Add more Content in List (After Inside)</button>
+			<button id="btn4">Add more Content in List (Before Inside)</button><br>
+			<button id="btn7">Remove the Element and it's Children</button>
+			<button id="btn8">Remove the Element's Children</button>
+			
+			<div id="para1">
+				<p>This is the first paragraph</p>
+				<p>This is the first paragraph</p>
+			</div>
+			<ol id="ol1">
+				<li>First List Item</li>
+				<li>Second List Item</li>
+				<li>Third List Item</li>
+			</ol>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn JQuery</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery_color.js"></script>
+		<script>
+		//First () is for the selecter. After the . is for the event or the effect. 
+		//Effects: toggle, show, hide, fadeOut, fadeIn, fadeToggle, slideUp, slideDown, slideToggle
+			$(document).ready(function(){
+				//JQuery codes must be here
+				$('#btn1').click(function(){
+					var var2=$('#div1').html();
+					alert(var2);
+				});
+				$('#div1').click(function(){
+					var var1=$(this).text()
+					//alert(var1);
+					$('#div2').text(var1);
+				});
+				$('#btn2').click(function(){
+					var var3=$('#div1').text();
+					$('#div2').text(var3)
+				});
+				$('#btn3').click(function(){
+					var var4=$('#div1').html();
+					$('#div2').html(var4);
+				});
+				$('#btn4').click(function(){
+					var var5=$('#div1').html();
+					$('#div2').text(var5);
+				});
+			});
+		</script>
+		<style>
+			.main{
+				margin:10px;
+			}
+			.body_style{
+				background: green; 
+				width: 300px; 
+				height: 300px;
+				margin:100px;
+				color: white;
+			}
+		</style>
+		<br>
+	</head>
+	<body>
+		<div class="main">
+			<button id="btn1">Get HTML</button>
+			<button id="btn2">Copy and Paste</button>
+			<button id="btn3">Copy and Paste HTML</button>
+			<button id="btn4">HTML into Text</button>
+			<div id="div1">This is <u>some</u> text</div>
+			<div class="body_style" id="div2"></div>
+		</div>
+	</body>
+</html>

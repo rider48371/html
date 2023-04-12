@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS3 Transition</title>
+		<style>
+			#div1{
+				background: orange;
+				border: 1px solid black;
+				width: 200px;
+				height: 200px;
+				margin: 10px;
+				transition: background 2s, width 2s, height 2s;
+			}
+			#div1:hover{
+				background: green;
+				width: 300px;
+				height: 300px;
+			}
+			#div2{
+				background: orange;
+				border: 1px solid black;
+				width: 200px;
+				height: 200px;
+				margin: 10px;
+				transition: background 2s, width 2s, height 2s linear;
+			}
+			#div2:hover{
+				background: blue;
+				width: 300px;
+				height: 300px;
+			}
+			#div3{
+				background: orange;
+				border: 1px solid black;
+				width: 200px;
+				height: 200px;
+				margin: 10px;
+				transition: background 2s, width 2s, height 2s ease-in; 
+			}
+			#div3:hover{
+				background: red;
+				width: 300px;
+				height: 300px;
+			}
+			#div4{
+				background: orange;
+				border: 1px solid black;
+				width: 200px;
+				height: 200px;
+				margin: 10px;
+				transition: background 2s, width 2s, height 2s ease-out;
+			}
+			#div4:hover{
+				background: brown;
+				width: 300px;
+				height: 300px;
+			}
+			a {
+				color:blue;
+			}
+			a:hover {
+				color:green;
+				transition:1s;
+			}
+		</style>
+	</head>
+	<body>
+	<a href="../html/links.html">Links</a>
+	<a href="../master project/index.html">Master</a><br><br>
+		<div id="div1"></div>
+		<div id="div2"></div>
+		<div id="div3"></div>
+		<div id="div4"></div>
+	</body>
+</html>

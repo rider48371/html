@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Learn JQueryUI</title>
+		<a href="../../html/links.html">Links</a>
+		<a href="../../master project/index.html">Master</a><br>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<script>
+			$(document).ready(function(){
+				$('#menu').menu();
+			});
+		</script>
+		<style>
+			body{
+				padding:50px;
+			}
+			#div1{
+				background:red; border:black 2px solid; width:200px; height:200px;
+			}
+			#div3{
+				background:orange; border:black 2px solid; width:200px; height:200px;
+			}
+			#div2{
+				border:black 2px solid; width:400px; height:400px; float:right;
+			}
+			.ui-menu {
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="menu">
+			<li>Home</li>
+			<li>Software</li>
+			<li>Music</li>
+			<li>Technology
+				<ul>
+					<li>Information Technology
+						<ul>
+							<li>Computer Technology</li>
+							<li>Mobile Technology</li>
+							<li>Wired Technology</li>
+						</ul>
+					</li>
+					<li>Mechanical Technology</li>
+					<li>Electrical Technology</li>
+				</ul>
+			</li>
+			<li>Contact Us</li>
+		</ul>
+	</body>
+</html>

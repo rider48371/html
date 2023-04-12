@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn JQuery</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery_color.js"></script>
+		<script>
+		//First () is for the selecter. After the . is for the event or the effect. 
+		//Effects: toggle, show, hide, fadeOut, fadeIn, fadeToggle, slideUp, slideDown, slideToggle
+			$(document).ready(function(){
+				//JQuery codes must be here
+				$('#div1').click(function(){
+					$(this).animate({
+						height:'150px', 
+						width: '150px', 
+						//opacity: '.4', 
+						marginLeft: '300px',
+						backgroundColor: 'blue'
+					});
+				$(this).animate({
+						height:'250px', 
+						width: '250px', 
+						opacity: '.4', 
+						marginLeft: '500px',
+						backgroundColor: 'blue'
+					});
+				});
+			});
+		</script>
+		<style>
+			.main{
+				margin:10px;
+				float:left;
+			}
+			.body_style{
+				background: green; 
+				width: 300px; 
+				height: 300px;
+			}
+		</style>
+		<br>
+	</head>
+	<body>
+		<div class="main">
+			<div id="div1" class="body_style"></div>
+		</div>
+	</body>
+</html>

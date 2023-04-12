@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn JQuery</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br>
+		<script src="jquery.js"></script>
+		<script>
+		//First () is for the selecter. After the . is for the event or the effect. 
+			$(document).ready(function(){
+				//JQuery codes must be here
+				$('#div1').click(function(){
+					$('#div1').fadeOut();
+				});
+				
+			});
+			$(document).ready(function(){
+				//JQuery codes must be here
+				$('.div2').click(function(){
+					$('.div2').fadeOut();
+				});
+				
+			});
+		</script>
+		<br>
+	</head>
+	<body>
+		<div id="div1" style="background: orange; width: 500px; height: 300px;"></div>
+		<div class="div2" style="background: green; width: 500px; height: 300px;"></div>
+	</body>
+</html>

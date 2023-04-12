@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn JQuery</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br>
+		<script src="jquery.js"></script>
+		<script>
+		//First () is for the selecter. After the . is for the event or the effect. 
+		/*Different Events:
+			Click, Dblclick, mouseout, mouseleave, mouseover, mouseenter, mouseup (releasing mouse click), mousedown (pressing mouse button)*/
+			$(document).ready(function(){
+				//JQuery codes must be here
+				$('div').click(function(){
+					//$('div').fadeOut();
+					alert('the Div has been Clicked');
+				});
+				
+			});
+		</script>
+		<br>
+	</head>
+	<body>
+		<div style="background: orange; width: 500px; height: 300px;"></div>
+	</body>
+</html>

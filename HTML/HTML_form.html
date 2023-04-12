@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML Forms</title>
+		<style>
+			a {
+				color:blue;
+			}
+			a:hover {
+				color: green;
+				transition: 1s;
+			}
+		</style>
+	</head>
+	<body>
+	<a href="links.html">Links</a>
+	<a href="../master project/index.html">Master</a><br><br>
+		<form>
+			<table>
+				<tr>
+					<td><label for="user">User Name</label></td>
+					<td><input type="text" name="user" id="user"></td>
+				</tr>
+				<tr>
+					<td><label for="pass">Password</label></td>
+					<td><input type="password" name="pass" id="pass"></td>
+				</tr>
+				<tr>
+					<td><label>Gender</label></td>
+					<td>Male: <input type="radio" name="gender" value="male">
+						Female: <input type="radio" name="gender" value="female">
+				</tr>
+				<tr>
+					<td><label>Skills</label></td>
+					<td>HTML: <input type="checkbox" name="html" value="html">
+						CSS: <input type="checkbox" name="css" value="CSS">
+						PHP: <input type="checkbox" name="php" value="PHP"></td>
+				</tr>
+				<tr>
+					<td><label for="country">Select your Country</label></td>
+					<td>
+						<select id="country" name="country">
+							<option value="">Select your country</option>
+							<option value="us">United States</option>
+							<option value="pk">Pakistan</option>
+							<option value="in">India</option>
+							<option value="uk">United Kingdom</option>
+							<option value="ca">Canada</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" value="click to submit" name="submit_form">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn JQuery</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery_color.js"></script>
+		<script>
+		//First () is for the selecter. After the . is for the event or the effect. 
+		//Effects: toggle, show, hide, fadeOut, fadeIn, fadeToggle, slideUp, slideDown, slideToggle
+			$(document).ready(function(){
+				//JQuery codes must be here
+				$('#btn1').click(function(){
+					$('#div1').width(500);
+					$('#div1').height(500);
+					$('#div1').text('The width of this element is '+ $('#div1').width() + ' px and the height is ' + $('#div1').height() + ' px.');
+				});
+			});
+		</script>
+		<style>
+			.main{
+				margin:10px;
+			}
+			.body_style{
+				background:red;width:300px;height:300px;margin:20px;color:white;
+			}
+			
+		</style>
+		<br>
+	</head>
+	<body>
+		<div class="main">
+			<button id="btn1">Click to Change Width</button>
+			<div id="div1" class="body_style">This is the div1</div>
+		</div>
+	</body>
+</html>

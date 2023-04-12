@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Learn JQueryUI</title>
+		<a href="../../html/links.html">Links</a>
+		<a href="../../master project/index.html">Master</a><br>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<script>
+			$(document).ready(function(){
+				$('#div1').draggable({revert:"valid"});
+				$('#div3').draggable({revert:"invalid"});
+				$('#div2').droppable({
+					//accept: '#div1',
+					drop: function(event, ui) {
+						$(this).addClass('dropped').text('Got It!');
+					}
+				});
+				
+			});
+		</script>
+		<style>
+			body{
+				padding:50px;
+			}
+			#div1{
+				background:red; border:black 2px solid; width:200px; height:200px;float:left;
+			}
+			#div3{
+				background:orange; border:black 2px solid; width:200px; height:200px;float:left;
+			}
+			#div2{
+				border:black 2px solid; width:400px; height:400px; float:right;
+			}
+			.dropped{
+				background:blue; color:white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<div id="div3"></div>
+		<div id="div2"></div>
+	</body>
+</html>

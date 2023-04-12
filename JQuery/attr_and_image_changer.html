@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn JQuery</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery_color.js"></script>
+		<script>
+		//First () is for the selecter. After the . is for the event or the effect. 
+		//Effects: toggle, show, hide, fadeOut, fadeIn, fadeToggle, slideUp, slideDown, slideToggle
+			$(document).ready(function(){
+				//JQuery codes must be here
+				$('#xds').mouseenter(function(){
+					$(this).attr('src', 'images/xds2.jpg');
+				});
+				$('#xds').mouseleave(function(){
+					$(this).attr('src', 'images/xds.png');
+				});
+				$('#btn1').click(function(){
+					//var var1=$('#xds').attr('src');
+					//alert(var1)
+					alert($('#xds').attr('src'));
+				});
+				$('#btn2').click(function(){
+					$('#xds').attr('width', '900px');
+				});
+				$('#btn3').click(function(){
+					$('#xds').attr('height', '600px');
+				});
+			});
+		</script>
+		<style>
+			.main{
+				margin:10px;
+			}
+			.body_style{
+				background: green; 
+				width: 300px; 
+				height: 300px;
+				margin:100px;
+				color: white;
+			}
+		</style>
+		<br>
+	</head>
+	<body>
+		<div class="main">
+		<button id="btn1">Click to get source</button>
+		<button id="btn2">Click to change width</button>
+		<button id="btn3">Click to change height</button><br><br>
+			<img id="xds" src="images/xds.png" width="500px">
+		</div>
+	</body>
+</html>

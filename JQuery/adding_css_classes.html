@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Learn JQuery</title>
+		<a href="../html/links.html">Links</a>
+		<a href="../master project/index.html">Master</a><br>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery_color.js"></script>
+		<script>
+		//First () is for the selecter. After the . is for the event or the effect. 
+		//Effects: toggle, show, hide, fadeOut, fadeIn, fadeToggle, slideUp, slideDown, slideToggle
+			$(document).ready(function(){
+				//JQuery codes must be here
+				$('#btn1').click(function(){
+					$('#div1').addClass('body_style body_style2');
+				});
+				$('#btn2').click(function(){
+					$('#div1').removeClass('body_style2');
+				});
+			});
+		</script>
+		<style>
+			.main{
+				margin:10px;
+			}
+			.body_style{
+				width:300px;height:300px;
+			}
+			.body_style2 {
+				color:white;padding:20px;margin:50px;border:5px solid green;
+			}
+			.background {
+				background:red;
+			}
+		</style>
+		<br>
+	</head>
+	<body>
+		<div class="main">
+			<button id="btn1">Click to Add Class</button>
+			<button id="btn2">Click to Remove Class</button>
+			<div id="div1" class="background">This is the div1</div>
+		</div>
+	</body>
+</html>

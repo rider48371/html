@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Learn JQueryUI</title>
+		<a href="../../html/links.html">Links</a>
+		<a href="../../master project/index.html">Master</a><br>
+		<link rel="stylesheet" href="style.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<script>
+			var css_background='red';
+				function css_func () {
+					css_tag=".result{background:"+css_background+";width:100px;height:30px;border: blue solid 2px;}";
+					$('style').replaceWith('<style>'+css_tag+'</style>');
+				}
+			$(document).ready(function(){
+				css_func();
+				$('select').change(function (){
+					css_background = $(this).val();
+					css_func();
+				});
+			});
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="right">
+				<label>Select any Color: </label>
+				<select class="elem">
+					<option value="blue">Blue</option>
+					<option value="red">Red</option>
+					<option value="orange">Orange</option>
+					<option value="black">Black</option>
+					<option value="gray">Gray</option>
+					<option value="yellow">Yellow</option>
+					<option value="purple">Purple</option>
+				</select>
+			</div>
+			<div class="left">
+				<div class="result"></div>
+			</div>
+		</div>
+	</body>
+</html>
