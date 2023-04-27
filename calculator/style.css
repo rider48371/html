@@ -88,11 +88,36 @@ select {
     --clr-light: #fff;
     --clr-dark: #000;
 
-    --clr-gradient: linear-gradient(var(--clr-primary-200), var(--clr-primary-400))
+    /*--clr-gradient: linear-gradient(var(--clr-primary-200), var(--clr-primary-400))*/
 }
 
 .header {
-    background-image: var(--clr-gradient)
+    background: url(images/header.jpeg);
     width: 100%;
-    height: 50px;
+    height: 150px;
+	color: var(--clr-dark);
+}
+
+.container {
+	width: 100%;
+	padding-left: 10rem;
+	background-color: lightblue;
+}
+
+.card-grid {
+	display:grid;
+	gap: 2rem;
+	grid-template-columns: repeat(3, 1fr);
+	padding-block: 2rem;
+	margin-inline: auto;
+}
+
+.card {
+	height: 150px;
+	width: 150px;
+	color: var(--clr-light);
+	background-color: green;
+	border-radius: .5rem;
+	text-align: center;
+	
 }
