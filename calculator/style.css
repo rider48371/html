@@ -196,6 +196,26 @@ select {
 
 }
 
+.form-grid {
+  display:grid;
+
+  gap: 4rem;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  padding-block: 2rem;
+
+  margin-inline: auto;
+
+  justify-items: center;
+}
+
+.form {
+	height: 100%;
+	width: 50%;
+}
+
+
 .screen {
 
   display: flex;
