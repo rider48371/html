@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Full Time Calculator</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <script src="../Javascript/fulltime.js"></script>
+
+</head>
+
+<body>
+
+    <div class="header"></div>
+
+    <div class="main">
+
+        <div class="wrapper">
+
+            <form>
+
+                <label for="month">Paystub through month:</label><br>
+
+                <input type="text" name="month" id="month"><br>
+
+                <label for="day">Paystub through day:</label><br>
+
+                <input type="text" name="day" id="day"><br>
+
+                <label for="year">Paystub through year</label><br>
+
+                <input type="text" name="year" id="year"><br>
+
+                <label for="pay">Pay</label><br>
+
+                <input type="text" name="pay" id="pay">
+
+                <select name="paytype" id="paytype">
+
+                    <option value="hourly">Hourly</option>
+
+                    <option value="weekly">Weekly</option>
+
+                    <option value="biweekly">Bi-weekly</option>
+
+                    <option value="semimonthly">Semi-Monthly</option>
+
+                    <option value="monthly">Monthly</option>
+
+                    <option value="weeklyteach">Weekly Teacher 10 Month</option>
+
+                    <option value="biweeklyteach">Bi-Weekly Teacher 10 Month</option>
+
+                    <option value="semimonthlyteach">Semi-Monthly Teacher 10 Month</option>
+
+                    <option value="monthlyteach">Monthly Teacher 10 Month</option>
+
+                </select><br>
+
+                <label for="ytd">YTD Income</label><br>
+
+                <input type="text" name="ytd" id="ytd"><br>
+
+                <label for="lastyear">Last Year W2</label><br>
+
+                <input type="text" name="lastyear" id="lastyear"><br>
+
+                <button type="submit">Calculate</button>
+
+            </form>
+
+        </div>
+
+        <div class="screen">
+
+                0
+
+            </div>
+
+    </div>
+
+    <div class="footer">
+
+            Copyright 2023
+
+            <a href="/" class="contact">Contact Us</a>
+
+    </div>
+
+</body>
+</html>
