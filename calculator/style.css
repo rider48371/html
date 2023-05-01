@@ -215,6 +215,12 @@ select {
 	width: 50%;
 }
 
+.one {
+  visibility: hidden;
+}
+
+.two {visibility: hidden;}
+
 
 .screen {
 
