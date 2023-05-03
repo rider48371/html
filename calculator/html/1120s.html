@@ -4,10 +4,59 @@
 	<meta charset="UTF-8" />
 	<title>1120-S Calculator</title>
 	<link rel="stylesheet" href="../style.css" />
+	<script src="../Javascript/twoyear.js" defer></script>
 </head>
 <body>
 	<div class="header"></div>
-	<div class="main"></div>
+	<div class="main">
+		<input type="button" value="1 Year" class="twoyear__btn" id="twoyear__btn">
+		<div class="form-grid">
+			<div class="form">
+				<form action="1120s" class="oneyear__form" id="oneyear__form">
+					<label for="percent">K-1 Box J: Percentage of ownership</label><br>
+					<input type="number" name="percent" id="percent"><br>
+					<label for="w2">W2 from Business</label><br>
+					<input type="number" name="w2" id="w2"><br>
+					<label for="k1">Boxes 1-3: K-1 from Business</label><br>
+					<input type="number" name="k1" id="k1"><br>
+					<label for="noi">Line 5: Non-recurring Other Income</label><br>
+					<input type="number" name="noi" id="noi"><br>
+					<label for="depreciation">Line 14: Depreciation</label><br>
+					<input type="number" name="depreciation" id="depreciation"><br>
+					<label for="depletion">Line 15: Depletion</label><br>
+					<input type="number" name="depletion" id="depletion"><br>
+					<label for="notes">Schedule L Line 17d: Mortgage Notes, Bonds Payable less than 1 year</label><br>
+					<input type="number" name="notes" id="notes"><br>
+					<label for="travel">Schedule M1 Line 3B: Travel and Entertainment</label><br>
+					<input type="number" name="travel" id="travel"><br>
+					<label for="amort">Amortization/Casualty Loss</label><br>
+					<input type="number" name="amort" id="amort"><br>
+				</form>
+			</div>
+			<div class="form">
+				<form action="1120s" data-visible="false" class="twoyear__form" id="twoyear__form">
+						<label for="percent">K-1 Box J: Percentage of ownership</label><br>
+						<input type="number" name="percent" id="percent"><br>
+						<label for="w2">W2 from Business</label><br>
+						<input type="number" name="w2" id="w2"><br>
+						<label for="k1">Boxes 1-3: K-1 from Business</label><br>
+						<input type="number" name="k1" id="k1"><br>
+						<label for="noi">Line 5: Non-recurring Other Income</label><br>
+						<input type="number" name="noi" id="noi"><br>
+						<label for="depreciation">Line 14: Depreciation</label><br>
+						<input type="number" name="depreciation" id="depreciation"><br>
+						<label for="depletion">Line 15: Depletion</label><br>
+						<input type="number" name="depletion" id="depletion"><br>
+						<label for="notes">Schedule L Line 17d: Mortgage Notes, Bonds Payable less than 1 year</label><br>
+						<input type="number" name="notes" id="notes"><br>
+						<label for="travel">Schedule M1 Line 3B: Travel and Entertainment</label><br>
+						<input type="number" name="travel" id="travel"><br>
+						<label for="amort">Amortization/Casualty Loss</label><br>
+						<input type="number" name="amort" id="amort"><br>
+				</form>
+			</div>
+		</div>
+	</div>
 	<div class="footer">
         Copyright 2023
         <a href="/" class="contact">Contact Us</a>

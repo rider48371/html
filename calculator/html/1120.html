@@ -4,16 +4,74 @@
 	<meta charset="UTF-8" />
 	<title>1120 Calculator</title>
 	<link rel="stylesheet" href="../style.css" />
+	<script src="../Javascript/twoyear.js" defer></script>
 </head>
 <body>
 	<div class="header"></div>
-	<div class="main"></div>
+	<div class="main">
+			<input type="button" value="1 Year" class="twoyear__btn" id="twoyear__btn">
+			<div class="form-grid">
+				<div class="form">
+					<form action="1120s" class="oneyear__form" id="oneyear__form">
+						<label for="percent">Schedule G Part 2: Percentage of ownership</label><br>
+						<input type="number" name="percent" id="percent"><br>
+						<label for="w2">Box 5: W2 from Business</label><br>
+						<input type="number" name="w2" id="w2"><br>
+						<label for="nrg">Lines 8 & 9: Non-Recurring Gains</label><br>
+						<input type="number" name="nrg" id="nrg"><br>
+						<label for="nri">Line 10: Non-Recurring Other Income</label><br>
+						<input type="number" name="nri" id="nri"><br>
+						<label for="depreciation">Line 20: Depreciation</label><br>
+						<input type="number" name="depreciation" id="depreciation"><br>
+						<label for="depletion">Line 21: Depletion</label><br>
+						<input type="number" name="depletion" id="depletion"><br>
+						<label for="ol">Line 29a: Operating Loss</label><br>
+						<input type="number" name="ol" id="ol"><br>
+						<label for="til">Line 30: Taxable Income/Loss</label><br>
+						<input type="number" name="til" id="til"><br>
+						<label for="tt">Line 31: Total Tax</label><br>
+						<input type="number" name="tt" id="tt"><br>
+						<label for="mn">Schedule L Line 17d: Mortgage notes, Bonds Payable less than 1 year</label><br>
+						<input type="number" name="mn" id="mn"><br>
+						<label for="travel">Schedule M1 Line 5c: Travel/Entertainment</label><br>
+						<input type="number" name="travel" id="travel"><br>
+						<label for="am">Amortization/Casualty Loss</label><br>
+						<input type="number" name="am" id="am"><br>
+					</form>
+				</div>
+				<div class="form">
+					<form action="1120s" data-visible="false" class="twoyear__form" id="twoyear__form">
+							<label for="percent">Schedule G Part 2: Percentage of ownership</label><br>
+							<input type="number" name="percent" id="percent"><br>
+							<label for="w2">Box 5: W2 from Business</label><br>
+							<input type="number" name="w2" id="w2"><br>
+							<label for="nrg">Lines 8 & 9: Non-Recurring Gains</label><br>
+							<input type="number" name="nrg" id="nrg"><br>
+							<label for="nri">Line 10: Non-Recurring Other Income</label><br>
+							<input type="number" name="nri" id="nri"><br>
+							<label for="depreciation">Line 20: Depreciation</label><br>
+							<input type="number" name="depreciation" id="depreciation"><br>
+							<label for="depletion">Line 21: Depletion</label><br>
+							<input type="number" name="depletion" id="depletion"><br>
+							<label for="ol">Line 29a: Operating Loss</label><br>
+							<input type="number" name="ol" id="ol"><br>
+							<label for="til">Line 30: Taxable Income/Loss</label><br>
+							<input type="number" name="til" id="til"><br>
+							<label for="tt">Line 31: Total Tax</label><br>
+							<input type="number" name="tt" id="tt"><br>
+							<label for="mn">Schedule L Line 17d: Mortgage notes, Bonds Payable less than 1 year</label><br>
+							<input type="number" name="mn" id="mn"><br>
+							<label for="travel">Schedule M1 Line 5c: Travel/Entertainment</label><br>
+							<input type="number" name="travel" id="travel"><br>
+							<label for="am">Amortization/Casualty Loss</label><br>
+							<input type="number" name="am" id="am"><br>
+					</form>
+				</div>
+			</div>
+		</div>
 	<div class="footer">
-
-        Copyright 2023
-
+			Copyright 2023
         <a href="/" class="contact">Contact Us</a>
-
     </div>
 </body>
 </html>

@@ -1,117 +1,58 @@
 <!doctype html>
-
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8" />
-
-    <title>Schedule C Calculator</title>
-
-    <link rel="stylesheet" href="../style.css" />
-
-    <script src="../Javascript/schedulec.js" defer></script>
-
+	<meta charset="UTF-8" />
+	<title>Schedule C Calculator</title>
+	<link rel="stylesheet" href="../style.css" />
+	<script src="../Javascript/twoyear.js" defer></script>
 </head>
-
 <body>
-
-    <div class="header"></div>
-
-    <div class="main">
-
-        <input type="button" value="1 Year" class="twoyear__btn" id="twoyear__btn">
-
-        <!-- <button class="twoyear__btn" id="twoyear__btn">1 year</button> -->
-
-        <div class="form-grid">
-
-            <div class="form">
-
-                <form id="oneyear__form" class="oneyear__form" action="schedulec">
-
-                    <label for="profit">Net Profit</label><br />
-
-                    <input type="text" name="profit" id="profit" /><br />
-
-                    <label for="depletion">Depletion</label><br />
-
-                    <input type="number" name="depletion" id="depletion" /><br />
-
-                    <label for="depreciation">Depreciation</label><br />
-
-                    <input type="number" name="depreciation" id="depreciation" /><br />
-
-                    <label for="meals">Meals and Entertainment</label><br />
-
-                    <input type="number" name="meals" id="meals" /><br />
-
-                    <label for="use">Business Use of Home</label><br />
-
-                    <input type="number" name="use" id="use" /><br />
-
-                    <label for="miles">Vehicle Miles</label><br />
-
-                    <input type="number" name="miles" id="miles" /><br />
-
-                    <label for="amortization">Amortization</label><br />
-
-                    <input type="number" name="amortization" id="amortization" /><br />
-
-                </form>
-
-            </div>
-
-            <div class="form">
-
-                <form id="twoyear__form" data-visible="false" class="twoyear__form" action="schedulec">
-
-                    <label for="profit">Net Profit</label><br />
-
-                    <input type="text" name="profit" id="profit" /><br />
-
-                    <label for="depletion">Depletion</label><br />
-
-                    <input type="number" name="depletion" id="depletion" /><br />
-
-                    <label for="depreciation">Depreciation</label><br />
-
-                    <input type="number" name="depreciation" id="depreciation" /><br />
-
-                    <label for="meals">Meals and Entertainment</label><br />
-
-                    <input type="number" name="meals" id="meals" /><br />
-
-                    <label for="use">Business Use of Home</label><br />
-
-                    <input type="number" name="use" id="use" /><br />
-
-                    <label for="miles">Vehicle Miles</label><br />
-
-                    <input type="number" name="miles" id="miles" /><br />
-
-                    <label for="amortization">Amortization</label><br />
-
-                    <input type="number" name="amortization" id="amortization" /><br />
-
-                </form>
-
-            </div>
-
-            <!-- <button type="submit" id="calculate" class="calculate">Calculate</button> -->
-
-        </div>
-
-    </div>
-
-    <div class="footer">
-
+	<div class="header"></div>
+	<div class="main">
+		<input type="button" value="1 Year" class="twoyear__btn" id="twoyear__btn">
+		<div class="form-grid">
+			<div class="form">
+				<form id="oneyear__form" class="oneyear__form" action="schedulec">
+					<label for="profit">Net Profit</label><br />
+					<input type="text" name="profit" id="profit" /><br />
+					<label for="depletion">Depletion</label><br />
+					<input type="number" name="depletion" id="depletion" /><br />
+					<label for="depreciation">Depreciation</label><br />
+					<input type="number" name="depreciation" id="depreciation" /><br />
+					<label for="meals">Meals and Entertainment</label><br />
+					<input type="number" name="meals" id="meals" /><br />
+					<label for="use">Business Use of Home</label><br />
+					<input type="number" name="use" id="use" /><br />
+					<label for="miles">Vehicle Miles</label><br />
+					<input type="number" name="miles" id="miles" /><br />
+					<label for="amortization">Amortization</label><br />
+					<input type="number" name="amortization" id="amortization" /><br />
+				</form>
+			</div>
+			<div class="form">
+				<form id="twoyear__form" data-visible="false" class="twoyear__form" action="schedulec">
+					<label for="profit">Net Profit</label><br />
+					<input type="text" name="profit" id="profit" /><br />
+					<label for="depletion">Depletion</label><br />
+					<input type="number" name="depletion" id="depletion" /><br />
+					<label for="depreciation">Depreciation</label><br />
+					<input type="number" name="depreciation" id="depreciation" /><br />
+					<label for="meals">Meals and Entertainment</label><br />
+					<input type="number" name="meals" id="meals" /><br />
+					<label for="use">Business Use of Home</label><br />
+					<input type="number" name="use" id="use" /><br />
+					<label for="miles">Vehicle Miles</label><br />
+					<input type="number" name="miles" id="miles" /><br />
+					<label for="amortization">Amortization</label><br />
+					<input type="number" name="amortization" id="amortization" /><br />
+				</form>
+			</div>
+			<!-- <button type="submit" id="calculate" class="calculate">Calculate</button> -->
+		</div>
+	</div>
+	<div class="footer">
         Copyright 2023
-
         <a href="/" class="contact">Contact Us</a>
-
     </div>
-
 </body>
-
 </html>
