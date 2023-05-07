@@ -17,18 +17,14 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <script
-      src="https://kit.fontawesome.com/184488da85.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
+    <script crossorigin="anonymous" defer></script>
     <title>Bootstrap calculator</title>
   </head>
   <div class="header"></div>
   <body>
     <div class="container-fluid p-4 bg-dark">
-      <div class="row g-4">
-        <div class="col-4">
+      <div class="row g-4 d-flex flex-column flex-md-row">
+        <div class="col-md-4 col-12">
           <div class="card bg-primary-subtle pt-3">
             <img src="images/fulltime.svg" alt="Full-Time" />
             <div class="card-body">
@@ -36,13 +32,16 @@
               <p class="d-flex justify-content-center">
                 Full Time Income Calculator
               </p>
-              <a href="#" class="btn btn-primary d-flex justify-content-center"
+              <a
+                href="#"
+                class="btn btn-primary d-flex justify-content-center"
+                id="fulltime"
                 >Calculate</a
               >
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4 col-12">
           <div class="card bg-primary-subtle pt-3 pb-4">
             <img src="images/variable.svg" alt="Variable" />
             <div class="card-body">
@@ -50,13 +49,16 @@
               <p class="d-flex justify-content-center">
                 Variable Income Calculator
               </p>
-              <a href="#" class="btn btn-primary d-flex justify-content-center"
+              <a
+                href="#"
+                class="btn btn-primary d-flex justify-content-center"
+                id="variable"
                 >Calculate</a
               >
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4 col-12">
           <div class="card bg-primary-subtle pt-3">
             <img src="images/schedulec.svg" alt="Schedule C" />
             <div class="card-body">
@@ -64,15 +66,18 @@
               <p class="d-flex justify-content-center">
                 Schedule C Income Calculator
               </p>
-              <a href="#" class="btn btn-primary d-flex justify-content-center"
+              <a
+                href="#"
+                class="btn btn-primary d-flex justify-content-center"
+                id="schedulec"
                 >Calculate</a
               >
             </div>
           </div>
         </div>
       </div>
-      <div class="row g-4">
-        <div class="col-4">
+      <div class="row g-4 d-flex flex-column flex-md-row pt-3">
+        <div class="col-md-4 col-12">
           <div class="card bg-primary-subtle pt-3">
             <img src="images/1120s.svg" alt="1120-S" />
             <div class="card-body">
@@ -80,13 +85,16 @@
               <p class="d-flex justify-content-center">
                 1120-S Income Calculator
               </p>
-              <a href="#" class="btn btn-primary d-flex justify-content-center"
+              <a
+                href="#"
+                class="btn btn-primary d-flex justify-content-center"
+                id="1120s"
                 >Calculate</a
               >
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4 col-12">
           <div class="card bg-primary-subtle pt-3">
             <img src="images/1065.svg" alt="1065" />
             <div class="card-body">
@@ -94,13 +102,16 @@
               <p class="d-flex justify-content-center">
                 1065 Income Calculator
               </p>
-              <a href="#" class="btn btn-primary d-flex justify-content-center"
+              <a
+                href="#"
+                class="btn btn-primary d-flex justify-content-center"
+                id="1065"
                 >Calculate</a
               >
             </div>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-md-4 col-12">
           <div class="card bg-primary-subtle pt-3">
             <img src="images/1120.svg" alt="1120" />
             <div class="card-body">
@@ -108,14 +119,17 @@
               <p class="d-flex justify-content-center">
                 1120 Income Calculator
               </p>
-              <a href="#" class="btn btn-primary d-flex justify-content-center"
+              <a
+                href="#"
+                class="btn btn-primary d-flex justify-content-center"
+                id="1120"
                 >Calculate</a
               >
             </div>
           </div>
         </div>
       </div>
-      <div class="row d-flex justify-content-center">
+      <div class="row d-flex justify-content-center pt-3">
         <div class="col-sm-12 col-md-8 col-lg-6">
           <div class="card bg-primary-subtle pt-3">
             <img src="images/rental.svg" alt="Rental Income" />
@@ -124,7 +138,10 @@
               <p class="d-flex justify-content-center">
                 Calculator for Rental Income
               </p>
-              <a href="#" class="btn btn-primary d-flex justify-content-center"
+              <a
+                href="#"
+                class="btn btn-primary d-flex justify-content-center"
+                id="rental"
                 >Calculate</a
               >
             </div>
