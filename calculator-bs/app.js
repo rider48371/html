@@ -268,4 +268,66 @@ twoYear__btn.addEventListener("click", () => {
 
   if (visibility === "false") {
 
-    twoYear.setAttribute
+    twoYear.setAttribute("data-visible", "false");
+
+  }
+
+});
+
+ 
+
+scheduleeTwoYear__btn.addEventListener("click", () => {
+
+  if (scheduleeTwoYear__btn.value === "1 Year") {
+
+    schedeTwoYear__btn.value = "2 Years";
+
+  } else {
+
+    scheduleeTwoYear__btn.value = "1 Year";
+
+  }
+
+});
+
+ 
+
+const corpTwoYear = document.querySelector(".corptwoyear__form");
+
+const corpTwoYear__btn = document.querySelector(".corptwoyear__btn");
+
+ 
+
+corpTwoYear__btn.addEventListener("click", () => {
+
+  const visibility = corpTwoYear.getAttribute("data-visible");
+
+ 
+
+  if (visibility === "false") {
+
+    corpTwoYear.setAttribute("data-visible", "true");
+
+  } else if (visibility === "true") {
+
+    corpTwoYear.setAttribute("data-visible", "false");
+
+  }
+
+});
+
+ 
+
+corpTwoYear__btn.addEventListener("click", () => {
+
+  if (corpTwoYear__btn.value === "1 Year") {
+
+    corpTwoYear__btn.value = "2 Years";
+
+  } else {
+
+    corpTwoYear__btn.value = "1 Year";
+
+  }
+
+});
