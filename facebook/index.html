@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Poppins"
     />
+    <link rel="stylesheet" href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="app.js" defer></script>
     <title>SocialBook</title>
   </head>
@@ -31,6 +32,24 @@
           <img src="images/gilly.jpg" />
         </div>
       </div>
+      <div class="settings-menu">
+        <div class="settings-menu-inner">
+          <div class="user-profile">
+            <img src="images/gilly.jpg">
+            <div>
+              <p>Fred Rider</p>
+              <a href="#">Profile</a>
+            </div>
+          </div>
+          <div class="user-profile">
+            <img src="images/feedback.png">
+            <div>
+              <p>Feedback</p>
+              <a href="#">Help us improve the new design</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
     <div class="container">
       <div class="left-sidebar">
@@ -42,9 +61,234 @@
           <a href="#"><img src="images/watch.png" /> Watch</a>
           <a href="#">See More</a>
         </div>
+        <div class="shortcut-links">
+          <p>Your Shortcuts</p>
+          <a href="#"><img src="images/shortcut-1.png">Web Developers</a>
+          <a href="#"><img src="images/shortcut-2.png">Web Design Course</a>
+          <a href="#"><img src="images/shortcut-3.png">Full Stack Development</a>
+          <a href="#"><img src="images/shortcut-4.png">Website Experts</a>
+        </div>
       </div>
-      <div class="main-content"></div>
-      <div class="right-sidebar"></div>
+      <div class="main-content">
+        <div class="story-gallery">
+          <div class="story story1">
+            <img src="images/upload.png">
+            <p>Post Story</p>
+          </div>
+          <div class="story story2">
+            <img src="images/member-1.png">
+            <p>Alison</p>
+          </div>
+          <div class="story story3">
+            <img src="images/member-2.png">
+            <p>Jackson</p>
+          </div>
+          <div class="story story4">
+            <img src="images/member-3.png">
+            <p>Samona</p>
+          </div>
+          <div class="story story5">
+            <img src="images/member-4.png">
+            <p>John</p>
+          </div>
+        </div>
+        <div class="write-post-container">
+          <div class="user-profile">
+            <img src="images/gilly.jpg">
+            <div>
+              <p>Fred Rider</p>
+              <small>Public <i class="fas fa-caret-down"></i></small>
+            </div>
+          </div>
+          <div class="post-input-container">
+            <textarea rows="5" placeholder="What's on your Mind, Fred?"></textarea>
+            <div class="add-post-links">
+              <a href="#"><img src="images/live-video.png">Live Video</a>
+              <a href="#"><img src="images/photo.png">Photo/Video</a>
+              <a href="#"><img src="images/feeling.png">Feeling/Activity</a>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="images/gilly.jpg">
+              <div>
+                <p>Fred Rider</p>
+                <span>June 24, 2021, 13:40 pm</span>
+              </div>
+            </div>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+          <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis vitae doloribus cupiditate veniam repudiandae dolorum ad tempora est beatae. Fuga in nemo vel numquam porro fugiat esse earum provident velit.</p>
+          <img src="images/feed-image-1.png"class="post-img">
+          <div class="post-row">
+            <div class="activity-icons">
+              <div><img src="images/like-blue.png">120</div>
+              <div><img src="images/comments.png">45</div>
+              <div><img src="images/share.png">20</div>
+            </div>
+            <div class="post-profile-icon">
+              <img src="images/gilly.jpg"> <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="images/gilly.jpg">
+              <div>
+                <p>Fred Rider</p>
+                <span>June 26, 2021, 20:40 pm</span>
+              </div>
+            </div>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+          <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet officiis, soluta libero, saepe non neque excepturi deleniti magni veniam perferendis totam fugiat. Rem sit eum assumenda quas consequatur velit corrupti!</p>
+          <img src="images/feed-image-2.png"class="post-img">
+          <div class="post-row">
+            <div class="activity-icons">
+              <div><img src="images/like.png">120</div>
+              <div><img src="images/comments.png">45</div>
+              <div><img src="images/share.png">20</div>
+            </div>
+            <div class="post-profile-icon">
+              <img src="images/gilly.jpg"> <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="images/gilly.jpg">
+              <div>
+                <p>Fred Rider</p>
+                <span>June 26, 2021, 20:40 pm</span>
+              </div>
+            </div>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+          <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet officiis, soluta libero, saepe non neque excepturi deleniti magni veniam perferendis totam fugiat. Rem sit eum assumenda quas consequatur velit corrupti!</p>
+          <img src="images/feed-image-3.png"class="post-img">
+          <div class="post-row">
+            <div class="activity-icons">
+              <div><img src="images/like.png">120</div>
+              <div><img src="images/comments.png">45</div>
+              <div><img src="images/share.png">20</div>
+            </div>
+            <div class="post-profile-icon">
+              <img src="images/gilly.jpg"> <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="images/gilly.jpg">
+              <div>
+                <p>Fred Rider</p>
+                <span>June 26, 2021, 20:40 pm</span>
+              </div>
+            </div>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+          <p class="post-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet officiis, soluta libero, saepe non neque excepturi deleniti magni veniam perferendis totam fugiat. Rem sit eum assumenda quas consequatur velit corrupti!</p>
+          <img src="images/feed-image-4.png"class="post-img">
+          <div class="post-row">
+            <div class="activity-icons">
+              <div><img src="images/like.png">120</div>
+              <div><img src="images/comments.png">45</div>
+              <div><img src="images/share.png">20</div>
+            </div>
+            <div class="post-profile-icon">
+              <img src="images/gilly.jpg"> <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="images/gilly.jpg">
+              <div>
+                <p>Fred Rider</p>
+                <span>June 26, 2021, 20:40 pm</span>
+              </div>
+            </div>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+          <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis omnis commodi ratione perferendis at voluptatibus velit unde temporibus minima incidunt est aperiam quas voluptate reiciendis ad, dicta enim error ducimus?</p>
+          <img src="images/feed-image-5.png"class="post-img">
+          <div class="post-row">
+            <div class="activity-icons">
+              <div><img src="images/like.png">120</div>
+              <div><img src="images/comments.png">45</div>
+              <div><img src="images/share.png">20</div>
+            </div>
+            <div class="post-profile-icon">
+              <img src="images/gilly.jpg"> <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="load-more-btn">Load More</button>
+      </div>
+      <div class="right-sidebar">
+        <div class="sidebar-title">
+          <h4>Events</h4>
+          <a href="#">See All</a>
+        </div>
+        <div class="event">
+          <div class="left-event">
+            <h3>18</h3>
+            <span>March</span>
+          </div>
+          <div class="right-event">
+            <h4>Social Media</h4>
+            <p><i class="fas fa-map-marker-alt"></i>Willson Tech Park</p>
+            <a href="#">More Info</a>
+          </div>
+        </div>
+        <div class="event">
+          <div class="left-event">
+            <h3>22</h3>
+            <span>June</span>
+          </div>
+          <div class="right-event">
+            <h4>Mobile Marketing</h4>
+            <p><i class="fas fa-map-marker-alt"></i>Willson Tech Park</p>
+            <a href="#">More Info</a>
+          </div>
+        </div>
+        <div class="sidebar-title">
+          <h4>Advertisement</h4>
+          <a href="#">Close</a>
+        </div>
+        <img src="images/advertisement.png" class="sidebar-ads">
+        <div class="sidebar-title">
+          <h4>Conversation</h4>
+          <a href="#">Hide Chat</a>
+        </div>
+        <div class="online-list">
+          <div class="online">
+            <img src="images/member-1.png">
+            <p>Alison</p><p>Mina</p>
+          </div>
+        </div>
+        <div class="online-list">
+          <div class="online">
+            <img src="images/member-2.png">
+            <p>Jackson</p><p>Aston</p>
+          </div>
+        </div>
+        <div class="online-list">
+          <div class="online">
+            <img src="images/member-3.png">
+            <p>Samona</p><p>Rose</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Copyright 2019 <i class="fas fa-copyright"></i></p>
     </div>
   </body>
 </html>
