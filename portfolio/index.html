@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600"
+    />
+    <script src="app.js" defer></script>
+    <title>Front End Developer</title>
+  </head>
+  <body>
+    <div class="container" id="home">
+      <nav class="navbar">
+        <div class="logo"><a href="#home">Fred Rider</a></div>
+        <div class="nav__list">
+          <ul>
+            <li>
+              <a href="#about__me" class="navbar__links" id="about__page"
+                >About Me</a
+              >
+            </li>
+            <li>
+              <a href="#projects" class="navbar__links" id="projects__page"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="navbar__links" id="contact__page"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="https://www.github.com/rider48371" class="navbar__links"
+                >Github</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="main__area">
+        <div class="header">
+          <img src="images/header.jpg" />
+          <div class="header__wrapper">
+            <h1>Fred Rider</h1>
+            <p>Front End Developer</p>
+          </div>
+        </div>
+        <div class="about__me" id="about__me">
+          <div class="about__body">
+            <h1>About Me</h1>
+            <hr />
+            <p>
+              I am a self-taught front end developer. I have worked on several
+              personal projects and I have a drive to continue to learn more
+              every day!
+            </p>
+            <br />
+            <p>
+              My most recent project is working on a mortgage calculator that
+              can be used to determine a borrower's monthly gross income. This
+              was built completely with HTML and bootstrap, CSS, and vanilla
+              Javascript.
+            </p>
+            <br />
+            <p>
+              I also have several mock-up's for different current websites such
+              as Facebook, YouTube, and LinkedIn that were built completely with
+              HTML, CSS, and vanilla Javascript
+            </p>
+          </div>
+          <div class="about__img">
+            <img src="images/gilly.jpg" alt="My Beautiful Daughter" />
+          </div>
+        </div>
+        <div class="projects" id="projects">
+          <h1>Projects</h1>
+          <div class="cards">
+            <a
+              href="../facebook/index.html"
+              class="project__card"
+              style="text-align: center"
+              ><img src="images/facebook_mockup.png" /><br /><span
+                >FaceBook Mockup</span
+              ></a
+            >
+            <a
+              href="../gradient-creator/index.html"
+              class="project__card"
+              style="text-align: center"
+              ><img src="images/gradient_creator.png" /><br /><span
+                >Gradient Creator</span
+              ></a
+            >
+            <a
+              href="../calculator-bs/index.html"
+              class="project__card"
+              style="text-align: center"
+              ><img src="images/income_calc.png" /><br /><span
+                >Income Calculator</span
+              ></a
+            >
+            <a
+              href="../linkedin/index.html"
+              class="project__card"
+              style="text-align: center"
+              ><img src="images/linkedin_mockup.png" /><br /><span
+                >LinkedIn Mockup</span
+              ></a
+            >
+            <a
+              href="../movie/index.html"
+              class="project__card"
+              style="text-align: center"
+              ><img src="images/movies.png" /><br /><span>Movie Search</span></a
+            >
+            <a
+              href="../nextgen/index.html"
+              class="project__card"
+              style="text-align: center"
+              ><img src="images/nextgen.png" /><br /><span
+                >Next Generation Website</span
+              ></a
+            >
+            <a
+              href="../scroll/index.html"
+              class="project__card"
+              style="text-align: center"
+              ><img src="images/scroll.png" /><br /><span
+                >Colors Website</span
+              ></a
+            >
+            <a
+              href="../weather/index.html"
+              class="project__card"
+              style="text-align: center"
+              ><img src="images/weather_app.png" /><br /><span
+                >Weather App</span
+              ></a
+            >
+          </div>
+        </div>
+        <div class="contact" id="contact">
+          <h1>Contact Me</h1>
+          <div class="form__control">
+            <form class="contact__form">
+              <input
+                type="text"
+                name=""
+                id="name"
+                placeholder="Enter your Full Name"
+              /><br />
+              <input
+                type="email"
+                name=""
+                id="email"
+                placeholder="Enter your email address"
+              /><br />
+              <textarea
+                name=""
+                id="message"
+                rows="10"
+                placeholder="Enter your message here"
+              ></textarea
+              ><br />
+              <button type="button">Submit</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer" id="footer"></div>
+      </div>
+    </div>
+  </body>
+</html>
