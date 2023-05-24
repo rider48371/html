@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700"
+    />
+    <script src="app.js" defer></script>
+    <title>LinkedIn</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html" class="logo"><img src="images/logo.png"/></a>
+        <div class="search-box">
+          <img src="images/search.png" />
+          <input type="text" placeholder="Search" />
+        </div>
+      </div>
+      <div class="navbar-center">
+        <ul>
+          <li>
+            <a href="#" class="active-link"
+              ><img src="images/home.png" /><span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><img src="images/network.png" /><span>My Network</span></a
+            >
+          </li>
+          <li>
+            <a href="#"><img src="images/jobs.png" /><span>Jobs</span></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="images/message.png" /><span>Messaging</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><img src="images/notification.png" /><span
+                >Notifications</span
+              ></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-right">
+        <div class="online">
+          <img
+            src="images/user-1.jpg"
+            class="nav-profile-img"
+            onclick="toggleMenu()"
+          />
+        </div>
+      </div>
+      <!-- Profile Drop-down Menu -->
+      <div class="profile-menu-wrap" id="profileMenu">
+        <div class="profile-menu">
+          <div class="user-info">
+            <img src="images/user-1.jpg" />
+            <div>
+              <h3>Fred Rider</h3>
+              <a href="profile.html">See Your Profile</a>
+            </div>
+          </div>
+          <hr />
+          <a href="#" class="profile-menu-link">
+            <img src="images/feedback.png" />
+            <p>Give Feedback</p>
+            <span>></span>
+          </a>
+          <a href="#" class="profile-menu-link">
+            <img src="images/setting.png" />
+            <p>Settings & Privacy</p>
+            <span>></span>
+          </a>
+          <a href="#" class="profile-menu-link">
+            <img src="images/help.png" />
+            <p>Help & Support</p>
+            <span>></span>
+          </a>
+          <a href="#" class="profile-menu-link">
+            <img src="images/display.png" />
+            <p>Display & Accessibility</p>
+            <span>></span>
+          </a>
+          <a href="#" class="profile-menu-link">
+            <img src="images/logout.png" />
+            <p>Logout</p>
+            <span>></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- NAV END -->
+    <div class="container">
+      <div class="profile-main">
+        <div class="profile-container">
+          <img src="images/cover-pic.png" width="100%" />
+          <div class="profile-container-inner">
+            <img src="images/user-1.jpg" class="profile-pic" />
+            <h1>Fred Rider</h1>
+            <b
+              >Web Developer at Rider Enterprises | Former Developer at
+              DataStack and Intern at Oracle</b
+            >
+            <p>Lapeer, United States &middot; <a href="#">Contact Info</a></p>
+            <div class="mutual-connection">
+              <img src="images/user-2.png" />
+              <span>1 mutual connection: Orlando Diggs</span>
+            </div>
+            <div class="profile-btn">
+              <a href="#" class="primary-btn">
+                <img src="images/connect.png" />Connect
+              </a>
+              <a href="#" id="about_me">
+                <img src="images/chat.png" />Message
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="profile-description">
+          <h2>About</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+            quisquam voluptatibus at maxime recusandae dolor ullam itaque libero
+            doloribus molestias deserunt id corrupti, suscipit eius? In quas
+            laborum ratione temporibus enim dignissimos, atque eos omnis ut fuga
+            similique eligendi incidunt!
+          </p>
+          <p class="hidden" id="see-more">
+            <br />Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+            facilis sapiente quia fugiat? Atque nesciunt odio et quis veniam!
+            Aut commodi unde impedit cumque amet. Praesentium, id. Optio tempore
+            tenetur laudantium obcaecati consequatur rem a suscipit iusto.
+            Suscipit, harum maxime.
+          </p>
+          <a href="#about_me" class="see-more-link" onclick="toggleMenu1()"
+            >See More...</a
+          >
+        </div>
+        <div class="profile-description">
+          <h2>Experience</h2>
+          <div class="profile-desc-row">
+            <img src="images/microsoft.png" />
+            <div>
+              <h3>Lead Front-End Developer</h3>
+              <b>Microsoft &middot; Full-Time</b>
+              <b>Feb 2021 - Present &middot; 1.5 Years</b>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa
+                officiis quidem minus vitae a ea fuga aliquam repellendus quia
+                eum, accusamus, quae fugiat modi harum?
+              </p>
+              <hr />
+            </div>
+          </div>
+          <div class="profile-desc-row">
+            <img src="images/slack.png" />
+            <div>
+              <h3>Full Stack Developer</h3>
+              <b>Slack &middot; Full-Time</b>
+              <b>Dec 2019 - Feb 2021 &middot; 1.25 Years</b>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa
+                officiis quidem minus vitae a ea fuga aliquam repellendus quia
+                eum, accusamus, quae fugiat modi harum?
+              </p>
+              <hr />
+            </div>
+          </div>
+          <div class="profile-desc-row">
+            <img src="images/google.png" />
+            <div>
+              <h3>Web Developer</h3>
+              <b>Google &middot; Full-Time</b>
+              <b>Sept 2015 - Dec 2019 - Present &middot; 4.25 Years</b>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa
+                officiis quidem minus vitae a ea fuga aliquam repellendus quia
+                eum, accusamus, quae fugiat modi harum?
+              </p>
+            </div>
+          </div>
+          <hr />
+          <a href="#" class="experience-link"
+            >Show all 7 Experiences <img src="images/right-arrow.png" />
+          </a>
+        </div>
+        <div class="profile-description">
+          <h2>Education</h2>
+          <div class="profile-desc-row">
+            <img src="images/stanford.png" />
+            <div>
+              <h3>Stanford University</h3>
+              <b>BSEE, Electrical Engineering</b>
+              <b>2018-2022</b>
+              <hr />
+            </div>
+          </div>
+          <div class="profile-desc-row">
+            <img src="images/north.png" />
+            <div>
+              <h3>Northwestern University</h3>
+              <b>Computer Science</b>
+              <b>2015-2018</b>
+              <hr />
+            </div>
+          </div>
+          <div class="profile-desc-row">
+            <img src="images/mit.png" />
+            <div>
+              <h3>Harvard University</h3>
+              <b>Senior High School</b>
+              <b>2005-2015</b>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Profile Sidebar -->
+      <div class="profile-sidebar"></div>
+    </div>
+  </body>
+</html>

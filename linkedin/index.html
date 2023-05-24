@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700"
     />
     <script src="app.js" defer></script>
     <title>LinkedIn</title>
@@ -52,7 +52,45 @@
       </div>
       <div class="navbar-right">
         <div class="online">
-          <img src="images/user-1.jpg" class="nav-profile-img" />
+          <img src="images/user-1.jpg" class="nav-profile-img" onclick="toggleMenu()" />
+        </div>
+      </div>
+      <!-- Profile Drop-down Menu -->
+      <div class="profile-menu-wrap" id="profileMenu">
+        <div class="profile-menu">
+          <div class="user-info">
+            <img src="images/user-1.jpg">
+            <div>
+              <h3>Fred Rider</h3>
+              <a href="profile.html">See Your Profile</a>
+            </div>
+          </div>
+          <hr>
+          <a href="#" class="profile-menu-link">
+            <img src="images/feedback.png">
+            <p>Give Feedback</p>
+            <span>></span>
+          </a>
+          <a href="#" class="profile-menu-link">
+            <img src="images/setting.png">
+            <p>Settings & Privacy</p>
+            <span>></span>
+          </a>
+          <a href="#" class="profile-menu-link">
+            <img src="images/help.png">
+            <p>Help & Support</p>
+            <span>></span>
+          </a>
+          <a href="#" class="profile-menu-link">
+            <img src="images/display.png">
+            <p>Display & Accessibility</p>
+            <span>></span>
+          </a>
+          <a href="#" class="profile-menu-link">
+            <img src="images/logout.png">
+            <p>Logout</p>
+            <span>></span>
+          </a>
         </div>
       </div>
     </nav>
@@ -65,7 +103,7 @@
           <div class="sidebar-profile-info">
             <img src="images/user-1.jpg" />
             <h1>Fred Rider</h1>
-            <h3>Web Developer at Rider Enterprises</h3>
+            <h3>Lead Front-End Developer at Microsoft</h3>
             <ul>
               <li>Your Profile Views:<span>52</span></li>
               <li>Your Post Views:<span>810</span></li>
