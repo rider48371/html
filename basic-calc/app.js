@@ -10,8 +10,6 @@ for (let i = 0; i < buttons.length; i++) {
 
     const buttonValue = buttons[i].textContent;
 
-    console.log(buttonValue);
-
     if (buttonValue === "CE") {
 
       clearResult();
