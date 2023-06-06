@@ -88,7 +88,7 @@ function resetTimer() {
 
   startButton.disabled = false;
 
-  stoopButton.disabled = true;
+  stopButton.disabled = true;
 
 }
 
