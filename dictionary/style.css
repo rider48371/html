@@ -1,0 +1,30 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #ff926a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.container {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  width: 90%;
+  text-align: center;
+  max-width: 450px;
+}
+.heading {
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+.search {
+  padding: 10px;
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) inset;
+}
+.meaning-container {
+  display: none;
+}

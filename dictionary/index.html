@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700"
+    />
+    <script src="app.js" defer></script>
+    <title>English Dictionary</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">English Dictionary</h1>
+      <input
+        type="text"
+        class="search"
+        id="search"
+        placeholder="Search a word"
+      />
+      <p class="instructions" id="instructions">Type a word and press enter</p>
+      <div class="meaning-container">
+        <p class="meaning">
+          Title: <span class="title" id="title">______</span>
+        </p>
+        <p>Meaning: <span id="meanings">______</span></p>
+        <audio src="" controls id="audio"></audio>
+      </div>
+    </div>
+  </body>
+</html>
