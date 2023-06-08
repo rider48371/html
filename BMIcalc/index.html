@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700"
+    />
+    <script src="app.js" defer></script>
+    <title>BMI Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Body Mass Index (BMI) Calculator</h1>
+      <div class="input">
+        <label>Your height</label>
+        <div class="height">
+          <input type="number" id="feet" placeholder="Enter feet" required />
+          <input
+            type="number"
+            id="inches"
+            placeholder="Enter inches"
+            required
+          />
+        </div>
+      </div>
+      <div class="input">
+        <label>Enter your weight (lbs)</label>
+        <input type="number" id="weight" required />
+      </div>
+      <button type="submit" class="btn" id="btn" onclick="checkText()">
+        Compute BMI
+      </button>
+      <p class="bold">Your BMI:</p>
+      <p id="bmi-calculation"></p>
+      <div class="weight-condition">
+        <p class="bold">Weight Condition:</p>
+        <span id="weight-condition"></span>
+      </div>
+    </div>
+  </body>
+</html>

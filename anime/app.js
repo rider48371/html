@@ -34,10 +34,6 @@ btn.addEventListener("click", async () => {
 
     name.innerText = data.artist;
 
- 
-
-    console.log(data);
-
   } catch (error) {
 
     console.log(error);
