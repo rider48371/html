@@ -17,35 +17,8 @@
 .form {
   margin-right: 8rem;
 }
-
-.twoyear__form {
-  transform: translateX(900%);
-}
-
-.twoyear__form[data-visible="true"] {
-  transform: translateX(0%);
-}
-
-.schedetwoyear__form {
-  transform: translateX(900%);
-}
-
-.schedetwoyear__form[data-visible="true"] {
-  transform: translateX(0%);
-}
-
-.scheduleetwoyear__form {
-  transform: translateX(900%);
-}
-
-.scheduleetwoyear__form[data-visible="true"] {
-  transform: translateX(0%);
-}
-
-.corptwoyear__form {
-  transform: translateX(900%);
-}
-
-.corptwoyear__form[data-visible="true"] {
-  transform: translateX(0%);
+#fullresult {
+  font-size: 1.5rem;
+  text-align: center;
+  color: red;
 }
