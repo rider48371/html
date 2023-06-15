@@ -10,9 +10,7 @@ const bmiCalc = document.getElementById("bmi-calculation");
 
 const weightCond = document.getElementById("weight-condition");
 
- 
-
-function checkText() {
+ function checkText(){
 
   if (!(feet.value > 0)) {
 
