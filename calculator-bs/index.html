@@ -21,7 +21,17 @@
     <script crossorigin="anonymous" defer></script>
     <title>Bootstrap calculator</title>
   </head>
-  <div class="header"></div>
+  <div class="header">
+    <div class="dropdown">
+      <button class="dropbtn">Links</button>
+      <div class="dropdown-content">
+        <a href="https://selling-guide.fanniemae.com/" target="_blank">Fannie Mae Selling Guide</a>
+        <a href="https://guide.freddiemac.com/" target="_blank">Freddie Mac Selling Guide</a>
+        <a href="https://www.hud.gov/sites/dfiles/OCHCO/documents/4000.1hsgh-011823.pdf" target="_blank">FHA Handbook</a>
+        <a href="https://benefits.va.gov/warms/pam26_7.asp" target="_blank">VA Handbook</a>
+      </div>
+    </div>
+  </div>
   <body>
     <div class="container-fluid p-4 bg-dark">
       <div class="row g-4 d-flex flex-column flex-md-row">
@@ -152,14 +162,10 @@
     </div>
     <div class=" hide bg-primary-subtle" id="fulltimeform">
       <form action="fulltime">
-        <label for="month">Paystub through month:</label><br />
-        <input type="number" name="month" id="month" /><br />
-        <label for="day">Paystub through day:</label><br />
-        <input type="number" name="day" id="day" /><br />
-        <label for="year">Paystub through year</label><br />
-        <input type="number" name="year" id="year" /><br />
-        <label for="pay">Pay</label><br />
-        <input type="text" name="pay" id="pay" />
+        <input type="number" class="mb-3" name="month" id="month" placeholder="Paystub through month:"/><br>
+        <input type="number" class="mb-3" name="day" id="day" placeholder="Paystub through day:"/><br>
+        <input type="number" class="mb-3" name="year" id="year" placeholder="Paystub through year:"/><br>
+        <input type="text" class="mb-3" name="pay" id="pay" placeholder="Pay" />
         <select name="paytype" id="paytype" style="width: auto">
           <option value="hourly">Hourly</option>
           <option value="weekly">Weekly</option>
@@ -172,17 +178,61 @@
           <option value="annualteach"
             >Annual Teacher 10 Month</option> 
         </select><br />
-        <label for="ytd">YTD Income</label><br />
-        <input type="text" name="ytd" id="ytd" /><br />
-        <label for="lastyear">Last Year W2</label><br />
-        <input type="text" name="lastyear" id="lastyear" class="mb-4" /><br />
-        <input type="button" value="Calculate" id="ftbtn">
-        <p class="mb-5" id="fullresult"></p>
+        <input type="text" class="mb-3" class="mb-3" name="ytd" id="ytd" placeholder="YTD Income" /><br />
+        <input type="button" value="Calculate" class="calc mb-3" id="ftbtn">
+        <p class="mb-5 result" id="fullresult"></p>
       </form>
     </div>
     <div class="hide bg-primary-subtle" id="variableform">
       <form action="variable">
-        <label for="month">Variable</label>
+        <div class="columns center">
+          <label for="start__date">Start Date with Employer</label>
+          <input type="date" class="mb-3" id="start__date">
+          <label>Loan Program</label>
+          <select class="mb-3 "id="loan__type">
+            <option>Select One:</option>
+            <option value="Fannie">Fannie Mae</option>
+            <option value="Freddie">Freddie Mac</option>
+            <option value="FHA">FHA</option>
+          </select>
+          <label>Documentation to calculate</label>
+          <select class="mb-3" id="">
+            <option>Select One:</option>
+            <option value="paystub">Paystub/W2</option>
+            <option value="WVOE">WVOE/VOI</option>
+          </select>
+          <label>Do we have 2 years of w-2's from current employer on file?</label>
+          <select class="mb-3" id="2year" disabled>
+            <option>Select One:</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+          <label>Is base income variable or full time hourly/salary?</label>
+          <select class="mb-3" id="base__income" disabled>
+            <option>Select One:</option>
+            <option>Variable</option>
+            <option>Salary/Hourly</option>
+          </select>
+          <div class="using columns" id="using">
+            <label>Are we using: <span>Check all that apply</span> </label>
+            <div class="checkbox__group">
+              <label>Overtime</label>
+              <input type="checkbox" id="ot__check" disabled>
+            </div>
+            <div class="checkbox__group">
+              <label>Bonus</label>
+              <input type="checkbox" id="bonus__check" disabled>
+            </div>
+            <div class="checkbox__group">
+              <label>Commission</label>
+              <input type="checkbox" id="comm__check" disabled>
+            </div>
+            <div class="checkbox__group">
+              <label>Tip</label>
+              <input type="checkbox" id="tip__check" disabled>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
     <div class="hide bg-primary-subtle" id="schedulecform">
@@ -195,75 +245,84 @@
             id="twoyear__btn"
             onclick="schedcBtnClick()"
           />
-          <!-- <button class="twoyear__btn" id="twoyear__btn" onclick="schedcBtnClick()">1 Year</button> -->
         </div>
       </div>
-      <div class="row">
-        <div class="col-6">
-          <form action="schedulecform">
-            <div class="form">
-              <form id="oneyear__form" class="oneyear__form" action="schedulec">
-                <label for="profit">Net Profit</label><br />
-                <input type="text" name="profit" id="profit" /><br />
-                <label for="depletion">Depletion</label><br />
-                <input type="number" name="depletion" id="depletion" /><br />
-                <label for="depreciation">Depreciation</label><br />
-                <input
-                  type="number"
-                  name="depreciation"
-                  id="depreciation"
-                /><br />
-                <label for="meals">Meals and Entertainment</label><br />
-                <input type="number" name="meals" id="meals" /><br />
-                <label for="use">Business Use of Home</label><br />
-                <input type="number" name="use" id="use" /><br />
-                <label for="miles">Vehicle Miles</label><br />
-                <input type="number" name="miles" id="miles" /><br />
-                <label for="amortization">Amortization</label><br />
-                <input
-                  type="number"
-                  name="amortization"
-                  class="mb-5"
-                  id="amortization"
-                /><br />
-              </form>
-            </div>
-        </div>
+        <div class="row">
           <div class="col-6">
-            <div class="form">
-              <form
-                id="twoyear__form"
-                class="twoyear__form hide"
-                action="schedulec"
-              >
-                <label for="profit">Net Profit</label><br />
-                <input type="text" name="profit" id="profit" /><br />
-                <label for="depletion">Depletion</label><br />
-                <input type="number" name="depletion" id="depletion" /><br />
-                <label for="depreciation">Depreciation</label><br />
-                <input
-                  type="number"
-                  name="depreciation"
-                  id="depreciation"
-                /><br />
-                <label for="meals">Meals and Entertainment</label><br />
-                <input type="number" name="meals" id="meals" /><br />
-                <label for="use">Business Use of Home</label><br />
-                <input type="number" name="use" id="use" /><br />
-                <label for="miles">Vehicle Miles</label><br />
-                <input type="number" name="miles" id="miles" /><br />
-                <label for="amortization">Amortization</label><br />
-                <input
-                  type="number"
-                  name="amortization"
-                  class="mb-5"
-                  id="amortization"
-                /><br />
-              </form>
-            </div>
-          </form>
+            <form action="schedulecform">
+              <div class="form">
+                <form id="oneyear__form" class="oneyear__form" action="schedulec">
+                  <select id="cmilesadd" class="mb-3">
+                    <option value="2022" selected>2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                  </select> <br>
+                  <input type="text" class="mb-3" name="profit" id="cprofit" placeholder="Net Profit" /><br />
+                  <input type="number" class="mb-3" name="depletion" id="cdepletion" placeholder="Depletion" /><br />
+                  <input
+                    type="number"
+                    class="mb-3"
+                    name="depreciation"
+                    id="cdepreciation"
+                    placeholder="Depreciation"
+                  /><br />
+                  <input type="number" class="mb-3" name="meals" id="cmeals" placeholder="Meals and Entertainment" /><br />
+                  <input type="number" class="mb-3" name="use" id="cuse" placeholder="Business Use of Home" /><br />
+                  <input type="number" class="mb-3" name="miles" id="cmiles" placeholder="Vehicle Miles" /><br />
+                  <input
+                    type="number"
+                    class="mb-3"
+                    name="amortization"
+                    class="mb-3"
+                    id="camortization"
+                    placeholder="Amortization"
+                  /><br />
+                </form>
+              </div>
+          </div>
+            <div class="col-6">
+              <div class="form">
+                <form
+                  id="twoyear__form"
+                  class="twoyear__form hide"
+                  action="schedulec"
+                >
+                  <select id="cmilesadd2" class="mb-3">
+                    <option value="2022">2022</option>
+                    <option value="2021" selected>2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                  </select><br>
+                  <input type="text" class="mb-3" name="profit" id="cprofit2" placeholder="Net Profit" /><br />
+                  <input type="number" class="mb-3" name="depletion" id="cdepletion2" placeholder="Depletion" /><br />
+                  <input
+                    type="number"
+                    class="mb-3"
+                    name="depreciation"
+                    id="cdepreciation2"
+                    placeholder="Depreciation"
+                  /><br />
+                  <input type="number" class="mb-3" name="meals" id="cmeals2" placeholder="Meals and Entertainment" /><br />
+                  <input type="number" class="mb-3" name="use" id="cuse2" placeholder="Business Use of Home" /><br />
+                  <input type="number" class="mb-3" name="miles" id="cmiles2" placeholder="Vehicle Miles" /><br />
+                  <input
+                    type="number"
+                    class="mb-3"
+                    name="amortization"
+                    class="mb-3"
+                    id="camortization2"
+                    placeholder="Amortization"
+                  /><br />
+                </form>
+              </div>
+            </form>
+          </div>
+          <button class="calc mb-3" id="ccalc">Calculate</button>
+          <p class="mb-5 result" id="cresult"></p>
         </div>
-      </div>
     </div>
     <div class="hide bg-primary-subtle" id="schedeform">
       <form action="schedeform">
@@ -276,56 +335,41 @@
             onclick="schedeBtnClick()"
           />
         </div>
-          <div class="row">
-            <div class="col-6">
-              <div class="form">
-                  <form action="1120s" class="oneyear__form" id="oneyear__form">
-                    <label for="percent">K-1 Box J: Percentage of ownership</label><br>
-                    <input type="number" name="percent" id="percent"><br>
-                    <label for="w2">W2 from Business</label><br>
-                    <input type="number" name="w2" id="w2"><br>
-                    <label for="k1">Boxes 1-3: K-1 from Business</label><br>
-                    <input type="number" name="k1" id="k1"><br>
-                    <label for="noi">Line 5: Non-recurring Other Income</label><br>
-                    <input type="number" name="noi" id="noi"><br>
-                    <label for="depreciation">Line 14: Depreciation</label><br>
-                    <input type="number" name="depreciation" id="depreciation"><br>
-                    <label for="depletion">Line 15: Depletion</label><br>
-                    <input type="number" name="depletion" id="depletion"><br>
-                    <label for="notes">Schedule L Line 17d: Mortgage Notes,<br> Bonds Payable less than 1 year</label><br>
-                    <input type="number" name="notes" id="notes"><br>
-                    <label for="travel">Schedule M1 Line 3B: <br>Travel and Entertainment</label><br>
-                    <input type="number" name="travel" id="travel"><br>
-                    <label for="amort">Amortization/Casualty Loss</label><br>
-                    <input type="number" name="amort" class="mb-5" id="amort"><br>
-                  </form>
-                </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form">
+              <form action="1120s" class="oneyear__form" id="oneyear__form">
+                <input type="number" class="mb-3" name="percent" id="schedepercent" placeholder="K-1 Box J: Percentage of Ownership"><br>
+                <input type="number" class="mb-3" name="w2" id="schedew2" placeholder="W2 from Business"><br>
+                <input type="number" class="mb-3" name="k1" id="schedek1" placeholder="Boxes 1-3: K-1 from Business"><br>
+                <input type="number" class="mb-3" name="noi" id="schedenoi" placeholder="Line 5: Non-recurring Other Income"><br>
+                <input type="number" class="mb-3" name="depreciation" id="schededepreciation" placeholder="Line 14: Depreciation"><br>
+                <input type="number" class="mb-3" name="depletion" id="schededepletion" placeholder="Line 15: Depletion"><br>
+                <input type="number" class="mb-3" name="notes" id="schedenotes" placeholder="Schedule L Line 17d: Mortgage Notes, Bonds Payable less than 1 year"><br>
+                <input type="number" class="mb-3" name="travel" id="schedetravel" placeholder="Schedule M1 Line 3B: Travel and Entertainment"><br>
+                <input type="number" class="mb-3" name="amort" class="mb-3" id="schedeamort" placeholder="Amortization/Casualty Loss"><br>
+              </form>
             </div>
-              <div class="col-6">
-                <div class="form">
-                  <form action="1120s" class="schedetwoyear__form hide" id="schedetwoyear__form">
-                      <label for="percent">K-1 Box J: Percentage of ownership</label><br>
-                      <input type="number" name="percent" id="percent"><br>
-                      <label for="w2">W2 from Business</label><br>
-                      <input type="number" name="w2" id="w2"><br>
-                      <label for="k1">Boxes 1-3: K-1 from Business</label><br>
-                      <input type="number" name="k1" id="k1"><br>
-                      <label for="noi">Line 5: Non-recurring Other Income</label><br>
-                      <input type="number" name="noi" id="noi"><br>
-                      <label for="depreciation">Line 14: Depreciation</label><br>
-                      <input type="number" name="depreciation" id="depreciation"><br>
-                      <label for="depletion">Line 15: Depletion</label><br>
-                      <input type="number" name="depletion" id="depletion"><br>
-                      <label for="notes">Schedule L Line 17d: Mortgage Notes,<br> Bonds Payable less than 1 year</label><br>
-                      <input type="number" name="notes" id="notes"><br>
-                      <label for="travel">Schedule M1 Line 3B: <br> and Entertainment</label><br>
-                      <input type="number" name="travel" id="travel"><br>
-                      <label for="amort">Amortization/Casualty Loss</label><br>
-                      <input type="number" name="amort" class="mb-5" id="amort"><br>
-                  </form>
-                </div>
+          </div>
+          <div class="col-6">
+            <div class="form">
+              <form action="1120s" class="schedetwoyear__form hide" id="schedetwoyear__form">
+                  <input type="number" class="mb-3" name="percent" id="schedepercent2" placeholder="K-1 Box J: Percentage of Ownership"><br>
+                  <input type="number" class="mb-3" name="w2" id="schedew22" placeholder="W2 from Business"><br>
+                  <input type="number" class="mb-3" name="k1" id="schedek12" placeholder="Boxes 1-3: K-1 from Business"><br>
+                  <input type="number" class="mb-3" name="noi" id="schedenoi2" placeholder="Line 5: Non-recurring Other Income"><br>
+                  <input type="number" class="mb-3" name="depreciation" id="schededepreciation2" placeholder="Line 14: Depreciation"><br>
+                  <input type="number" class="mb-3" name="depletion" id="schededepletion2" placeholder="Line 15: Depletion"><br>
+                  <input type="number" class="mb-3" name="notes" id="schedenotes2" placeholder="Schedule L Line 17d: Mortgage Notes, Bonds Payable less than 1 year"><br>
+                  <input type="number" class="mb-3" name="travel" id="schedetravel2" placeholder="Schedule M1 Line 3B: Travel and Entertainment"><br>
+                  <input type="number" class="mb-3" name="amort" class="mb-3" id="schedeamort2" placeholder="Amortization/Casualty Loss"><br>
+              </form>
             </div>
-              </div>
+          </div>
+          <!-- <button class="mb-3 calc" id="schedecalc">Calculate</button> -->
+          <input type="button" value="Calculate" class="mb-3" id="schedecalc">
+          <p class="mb-5 result" id="schedeResult"></p>
+        </div>
       </form>
     </div>
     <div class="hide bg-primary-subtle" id="scheduleeform">
@@ -343,55 +387,37 @@
             <div class="col-6">
               <div class="form">
                   <form action="1065" class="oneyear__form" id="oneyear__form">
-                    <label for="percent">K-1 Box J: Percentage of ownership</label><br>
-                    <input type="number" name="percent" id="percent"><br>
-                    <label for="w2">W2 from Business</label><br>
-                    <input type="number" name="w2" id="w2"><br>
-                    <label for="k1">Boxes 1-3: K-1 from Business</label><br>
-                    <input type="number" name="k1" id="k1"><br>
-                    <label for="noi">Line 4: Non-recurring Other Income</label><br>
-                    <input type="number" name="noi" id="noi"><br>
-                    <label for="ooi">Line 7: Oridinary Other Income</label><br>
-                    <input type="number" name="ooi" id="ooi"><br>
-                    <label for="depreciation">Line 16c: Depreciation</label><br>
-                    <input type="number" name="depreciation" id="depreciation"><br>
-                    <label for="depletion">Line 17: Depletion</label><br>
-                    <input type="number" name="depletion" id="depletion"><br>
-                    <label for="notes">Schedule L Line 16d: Mortgage Notes,<br> Bonds Payable less than 1 year</label><br>
-                    <input type="number" name="notes" id="notes"><br>
-                    <label for="travel">Schedule M1 Line 4B: <br>Travel and Entertainment</label><br>
-                    <input type="number" name="travel" id="travel"><br>
-                    <label for="amort">Amortization/Casualty Loss</label><br>
-                    <input type="number" name="amort" class="mb-5" id="amort"><br>
+                    <input type="number" class="mb-3" name="percent" id="scheduleepercent" placeholder="K-1 Box J: Percentage of ownership"><br>
+                    <input type="number" class="mb-3" name="w2" id="scheduleew2" placeholder="W2 from Business"><br>
+                    <input type="number" class="mb-3" name="k1" id="scheduleek1" placeholder="Boxes 1-3: K-1 from Business"><br>
+                    <input type="number" class="mb-3" name="noi" id="scheduleenoi" placeholder="Line 4: Non-recurring Other Income"><br>
+                    <input type="number" class="mb-3" name="ooi" id="scheduleeooi" placeholder="Line 7: Oridinary Other Income"><br>
+                    <input type="number" class="mb-3" name="depreciation" id="scheduleedepreciation" placeholder="Line 16c: Depreciation"><br>
+                    <input type="number" class="mb-3" name="depletion" id="scheduleedepletion" placeholder="Line 17: Depletion"><br>
+                    <input type="number" class="mb-3" name="notes" id="scheduleenotes" placeholder="Schedule L Line 16d: Mortgage Notes, Bonds Payable less than 1 year"><br>
+                    <input type="number" class="mb-3" name="travel" id="scheduleetravel" placeholder="Schedule M1 Line 4B: Travel and Entertainment"><br>
+                    <input type="number" class="mb-3" name="amort" id="scheduleeamort" placeholder="Amortization/Casualty Loss"><br>
                   </form>
                 </div>
             </div>
               <div class="col-6">
                 <div class="form">
                   <form action="1065" class="scheduleetwoyear__form hide" id="scheduleetwoyear__form">
-                      <label for="percent">Percentage of ownership</label><br>
-                      <input type="number" name="percent" id="percent"><br>
-                      <label for="w2">W2 from Business</label><br>
-                      <input type="number" name="w2" id="w2"><br>
-                      <label for="k1">Boxes 1-3: K-1 from Business</label><br>
-                      <input type="number" name="k1" id="k1"><br>
-                      <label for="noi">Line 5: Non-recurring Other Income</label><br>
-                      <input type="number" name="noi" id="noi"><br>
-                      <label for="ooi">Line 7: Oridinary Other Income</label><br>
-                      <input type="number" name="ooi" id="ooi"><br>
-                      <label for="depreciation">Line 14: Depreciation</label><br>
-                      <input type="number" name="depreciation" id="depreciation"><br>
-                      <label for="depletion">Line 15: Depletion</label><br>
-                      <input type="number" name="depletion" id="depletion"><br>
-                      <label for="notes">Schedule L Line 17d: Mortgage Notes,<br> Bonds Payable less than 1 year</label><br>
-                      <input type="number" name="notes" id="notes"><br>
-                      <label for="travel">Schedule M1 Line 4B: <br>Travel and Entertainment</label><br>
-                      <input type="number" name="travel" id="travel"><br>
-                      <label for="amort">Amortization/Casualty Loss</label><br>
-                      <input type="number" name="amort" class="mb-5" id="amort"><br>
+                    <input type="number" class="mb-3" name="percent" id="scheduleepercent2" placeholder="K-1 Box J: Percentage of ownership"><br>
+                    <input type="number" class="mb-3" name="w2" id="scheduleew22" placeholder="W2 from Business"><br>
+                    <input type="number" class="mb-3" name="k1" id="scheduleek12" placeholder="Boxes 1-3: K-1 from Business"><br>
+                    <input type="number" class="mb-3" name="noi" id="scheduleenoi2" placeholder="Line 4: Non-recurring Other Income"><br>
+                    <input type="number" class="mb-3" name="ooi" id="scheduleeooi2" placeholder="Line 7: Oridinary Other Income"><br>
+                    <input type="number" class="mb-3" name="depreciation" id="scheduleedepreciation2" placeholder="Line 16c: Depreciation"><br>
+                    <input type="number" class="mb-3" name="depletion" id="scheduleedepletion2" placeholder="Line 17: Depletion"><br>
+                    <input type="number" class="mb-3" name="notes" id="scheduleenotes2" placeholder="Schedule L Line 16d: Mortgage Notes, Bonds Payable less than 1 year"><br>
+                    <input type="number" class="mb-3" name="travel" id="scheduleetravel2" placeholder="Schedule M1 Line 4B: Travel and Entertainment"><br>
+                    <input type="number" class="mb-3" name="amort" id="scheduleeamort2" placeholder="Amortization/Casualty Loss"><br>
                   </form>
                 </div>
               </div>
+              <input type="button" value="Calculate" class="calc mb-3" id="scheduleecalc">
+              <p class="mb-5 result" id="scheduleeResult"></p>
           </div>
       </form>
     </div>
@@ -410,69 +436,64 @@
             <div class="col-6">
               <div class="form">
                 <form action="1120s" class="oneyear__form" id="oneyear__form">
-                  <label for="percent">Schedule G Part 2: Percentage of ownership</label><br>
-                  <input type="number" name="percent" id="percent"><br>
-                  <label for="w2">Box 5: W2 from Business</label><br>
-                  <input type="number" name="w2" id="w2"><br>
-                  <label for="nrg">Lines 8 & 9: Non-Recurring Gains</label><br>
-                  <input type="number" name="nrg" id="nrg"><br>
-                  <label for="nri">Line 10: Non-Recurring Other Income</label><br>
-                  <input type="number" name="nri" id="nri"><br>
-                  <label for="depreciation">Line 20: Depreciation</label><br>
-                  <input type="number" name="depreciation" id="depreciation"><br>
-                  <label for="depletion">Line 21: Depletion</label><br>
-                  <input type="number" name="depletion" id="depletion"><br>
-                  <label for="ol">Line 29a: Operating Loss</label><br>
-                  <input type="number" name="ol" id="ol"><br>
-                  <label for="til">Line 30: Taxable Income/Loss</label><br>
-                  <input type="number" name="til" id="til"><br>
-                  <label for="tt">Line 31: Total Tax</label><br>
-                  <input type="number" name="tt" id="tt"><br>
-                  <label for="mn">Schedule L Line 17d: Mortgage notes,<br> Bonds Payable less than 1 year</label><br>
-                  <input type="number" name="mn" id="mn"><br>
-                  <label for="travel">Schedule M1 Line 5c: <br>Travel/Entertainment</label><br>
-                  <input type="number" name="travel" id="travel"><br>
-                  <label for="am">Amortization/Casualty Loss</label><br>
-                  <input type="number" name="am" class="mb-5" id="am"><br>
+                  <input type="number" name="percent" class="mb-3" id="corppercent" placeholder="Schedule G Part 2: Percentage of ownership"><br>
+                  <input type="number" name="w2" class="mb-3" id="corpw2" placeholder="Box 5: W2 from Business"><br>
+                  <input type="number" name="nrg" class="mb-3" id="corpnrg" placeholder="Lines 8 & 9: Non-Recurring Gains"><br>
+                  <input type="number" name="nri" class="mb-3" id="corpnri" placeholder="Line 10: Non-Recurring Other Income"><br>
+                  <input type="number" name="depreciation" class="mb-3" id="corpdepreciation" placeholder="Line 20: Depreciation"><br>
+                  <input type="number" name="depletion" class="mb-3" id="corpdepletion" placeholder="Line 21: Depletion"><br>
+                  <input type="number" name="ol" class="mb-3" id="corpol" placeholder="Line 29a: Operating Loss"><br>
+                  <input type="number" name="til" class="mb-3" id="corptil" placeholder="Line 30: Taxable Income/Loss"><br>
+                  <input type="number" name="tt" class="mb-3" id="corptt" placeholder="Line 31: Total Tax"><br>
+                  <input type="number" name="mn" class="mb-3" id="corpmn" placeholder="Schedule L Line 17d: Mortgage notes, Bonds Payable less than 1 year"><br>
+                  <input type="number" name="travel" class="mb-3" id="corptravel" placeholder="Schedule M1 Line 5c: Travel/Entertainment"><br>
+                  <input type="number" name="am" class="mb-3" id="corpam" placeholder="Amortization/Casualty Loss"><br>
                 </form>
               </div>
             </div>
             <div class="col-6">
               <div class="form">
                 <form action="1120s" class="corptwoyear__form hide" id="corptwoyear__form">
-                    <label for="percent">Schedule G Part 2: Percentage of ownership</label><br>
-                    <input type="number" name="percent" id="percent"><br>
-                    <label for="w2">Box 5: W2 from Business</label><br>
-                    <input type="number" name="w2" id="w2"><br>
-                    <label for="nrg">Lines 8 & 9: Non-Recurring Gains</label><br>
-                    <input type="number" name="nrg" id="nrg"><br>
-                    <label for="nri">Line 10: Non-Recurring Other Income</label><br>
-                    <input type="number" name="nri" id="nri"><br>
-                    <label for="depreciation">Line 20: Depreciation</label><br>
-                    <input type="number" name="depreciation" id="depreciation"><br>
-                    <label for="depletion">Line 21: Depletion</label><br>
-                    <input type="number" name="depletion" id="depletion"><br>
-                    <label for="ol">Line 29a: Operating Loss</label><br>
-                    <input type="number" name="ol" id="ol"><br>
-                    <label for="til">Line 30: Taxable Income/Loss</label><br>
-                    <input type="number" name="til" id="til"><br>
-                    <label for="tt">Line 31: Total Tax</label><br>
-                    <input type="number" name="tt" id="tt"><br>
-                    <label for="mn">Schedule L Line 17d: Mortgage notes,<br> Bonds Payable less than 1 year</label><br>
-                    <input type="number" name="mn" id="mn"><br>
-                    <label for="travel">Schedule M1 Line 5c: <br>Travel/Entertainment</label><br>
-                    <input type="number" name="travel" id="travel"><br>
-                    <label for="am">Amortization/Casualty Loss</label><br>
-                    <input type="number" name="am" class="mb-5" id="am"><br>
+                    <input type="number" name="percent" class="mb-3" id="corppercent2" placeholder="Schedule G Part 2: Percentage of ownership"><br>
+                  <input type="number" name="w2" class="mb-3" id="corpw22" placeholder="Box 5: W2 from Business"><br>
+                  <input type="number" name="nrg" class="mb-3" id="corpnrg2" placeholder="Lines 8 & 9: Non-Recurring Gains"><br>
+                  <input type="number" name="nri" class="mb-3" id="corpnri2" placeholder="Line 10: Non-Recurring Other Income"><br>
+                  <input type="number" name="depreciation" class="mb-3" id="corpdepreciation2" placeholder="Line 20: Depreciation"><br>
+                  <input type="number" name="depletion" class="mb-3" id="corpdepletion2" placeholder="Line 21: Depletion"><br>
+                  <input type="number" name="ol" class="mb-3" id="corpol2" placeholder="Line 29a: Operating Loss"><br>
+                  <input type="number" name="til" class="mb-3" id="corptil2" placeholder="Line 30: Taxable Income/Loss"><br>
+                  <input type="number" name="tt" class="mb-3" id="corptt2" placeholder="Line 31: Total Tax"><br>
+                  <input type="number" name="mn" class="mb-3" id="corpmn2" placeholder="Schedule L Line 17d: Mortgage notes, Bonds Payable less than 1 year"><br>
+                  <input type="number" name="travel" class="mb-3" id="corptravel2" placeholder="Schedule M1 Line 5c: Travel/Entertainment"><br>
+                  <input type="number" name="am" class="mb-3" id="corpam2" placeholder="Amortization/Casualty Loss"><br>
                 </form>
               </div>
             </div>
+            <input type="button" value="Calculate" class="calc mb-3" id="corpcalc">
+            <p class="mb-5 result" id="corpresult"></p>
           </div>
       </form>
     </div>
     <div class="hide bg-primary-subtle" id="rentalform">
       <form action="rentalform">
-        <label for="month">rental</label>
+        <input type="number" class="mt-3" id="rentallease" placeholder="Monthly Lease Agreement" onchange="disable()" onkeyup="disable()"><br>
+        <p class="smallfont">Only input if not on tax returns</p>
+        <input type="number" class="mb-3" id="rentalgrossrent" placeholder="Line 3: Gross Rent" onchange="disablelease()" onkeyup="disablelease()"><br>
+        <input type="number" class="mb-3" id="rentalexpenses" placeholder="Line 20: Total Expenses"><br>
+        <input type="number" class="mb-3" id="rentalinsurance" placeholder="Line 9: Insurance"><br>
+        <input type="number" class="mb-3" id="rentalinterest" placeholder="Line 12: Mortgage Interest"><br>
+        <input type="number" class="mb-3" id="rentaltaxes" placeholder="Line 16: Property Taxes"><br>
+        <input type="number" class="mb-3" id="rentaldepreciation" placeholder="Line 18: Depreciation"><br>
+        <input type="number" class="mb-3" id="rentalamort" placeholder="Amortization"><br>
+        <input type="number" class="mb-3" id="rentalhoa" placeholder="HOA Dues"><br>
+        <input type="number" id="rentalpercent" value="100"><br>
+        <p class="smallfont">Change if ownership percentage different on Schedule E</p>
+        <p class="result-small" id="annualtotal"></p>
+        <input type="number" name="months" id="rentalmonths" placeholder="Months Rented">
+        <p class="result-small" id="rentalmonthlyincome"></p><br>
+        <input type="number" class="mb-3" id="rentalpitia" placeholder="Monthly PITIa">
+        <input type="button" value="Calculate" class="rentcalc mb-3" id="rentalcalc">
+        <p class="result mb-5" id="net_rental"></p>
       </form>
     </div>
   </body>
