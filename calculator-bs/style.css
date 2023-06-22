@@ -98,3 +98,13 @@ input[type="number"] {
 .center {
   align-items: center;
 }
+.columns label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.checkbox__group {
+  text-align: center;
+}
+.hidden {
+  display: none;
+}

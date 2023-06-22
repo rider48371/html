@@ -562,6 +562,676 @@ btnEl.addEventListener("click", () => {
 
 // Variable Income
 
+const loanType = document.getElementById("loan__type");
+
+const using = document.getElementById("using");
+
+const otSection = document.getElementById("ot__section");
+
+const commissionSection = document.getElementById("commission__section");
+
+const tipSection = document.getElementById("tip__section");
+
+const otCheck = document.getElementById("ot__check");
+
+const bonusCheck = document.getElementById("bonus__check");
+
+const commissionCheck = document.getElementById("comm__check");
+
+const tipCheck = document.getElementById("tip__check");
+
+const incomeType = document.getElementById("income__type");
+
+const paystubCalculator = document.getElementById("paystub__calculator");
+
+const ytdOT = document.getElementById("ytd__ot");
+
+const ytdBonus = document.getElementById("ytd__bonus");
+
+const ytdCommission = document.getElementById("ytd__commission");
+
+const ytdTip = document.getElementById("ytd__tip");
+
+const bonusQuestion = document.getElementById("bonus__question");
+
+const positiveFactors = document.getElementById("positive__factors");
+
+const wvoeCalculator = document.getElementById("wvoe__calculator");
+
+const twoYear = document.getElementById("2year");
+
+const twoYearOptions = document.getElementById("twoyear");
+
+const extraQuestions = document.getElementById("extra__questions");
+
+const ytdOtRead = document.getElementById("ytd__ot-read");
+
+const ytdOtRecent = document.getElementById("recent__ot-w2");
+
+const ytdOtPrev = document.getElementById("previous__ot-w2");
+
+const ytdCommissionRead = document.getElementById("ytd__commission-read");
+
+const ytdCommissionRecent = document.getElementById("recent__commission-w2");
+
+const ytdCommissionPrev = document.getElementById("previous__commission-w2");
+
+const ytdTipRead = document.getElementById("ytd__tip-read");
+
+const ytdTipRecent = document.getElementById("recent__tip-w2");
+
+const ytdTipPrev = document.getElementById("previous__tip-w2");
+
+const varCalc = document.getElementById("varcalc");
+
+const baseIncome = document.getElementById("base__income");
+
+const ytdWVOE = document.getElementById("ytd__wvoe");
+
+const recentWVOE = document.getElementById("recent__wvoe");
+
+const previousWVOE = document.getElementById("previous__wvoe");
+
+const ytdPaystub = document.getElementById("ytd__paystub");
+
+const recentW2 = document.getElementById("recent__w2");
+
+const previousW2 = document.getElementById("previous__w2");
+
+const varTotalResult = document.getElementById("varTotalResult");
+
+const qualBaseWVOE = document.getElementById("qualifying__base-wvoe");
+
+const qualBasePaystub = document.getElementById("qualifying__base-paystub");
+
+const qualOt = document.getElementById("ot__qualifying");
+
+const qualComm = document.getElementById("commission__qualifying");
+
+const qualTip = document.getElementById("tip__qualifying");
+
+ 
+
+function daysDifference() {
+
+  var dateI1 = document.getElementById("varStartDate").value;
+
+  var dateI2 = document.getElementById("varPayDate").value;
+
+  var date1 = new Date(dateI1);
+
+  var date2 = new Date(dateI2);
+
+  var time_difference = date2.getTime() - date1.getTime();
+
+  var varResult = time_difference / (1000 * 60 * 60 * 24);
+
+ 
+
+  var startYear = date1.getFullYear();
+
+  // var startMonth = date1.getMonth();
+
+  var startDay = date1.getUTCDate();
+
+  var payYear = date2.getFullYear();
+
+  // var payMonth = date2.getMonth();
+
+  var payDay = date2.getUTCDate();
+
+ 
+
+  if (startDay == 1) {
+
+    var startMonth = date1.getMonth() + 2;
+
+  } else {
+
+    var startMonth = date1.getMonth() + 1;
+
+  }
+
+  if (payDay == 1) {
+
+    payMonth = date2.getMonth() + 2;
+
+  } else {
+
+    payMonth = date2.getMonth() + 1;
+
+  }
+
+  var getDaysInMonth = function(month, year) {
+
+    return new Date(year, month, 0).getDate();
+
+  };
+
+  let varTimeElapsed = (
+
+    payMonth -
+
+    Number(1) +
+
+    payDay / getDaysInMonth(payMonth, payYear)
+
+  ).toFixed(2);
+
+ 
+
+  if (varResult >= 730) {
+
+    if (
+
+      (incomeType.value === "wvoe" &&
+
+        baseIncome.value === "variable" &&
+
+        loanType.value === "Fannie" &&
+
+        otCheck.checked == false &&
+
+        bonusCheck.checked == false &&
+
+        commissionCheck.checked == false &&
+
+        tipCheck.checked == false) ||
+
+      (incomeType.value === "wvoe" &&
+
+        baseIncome.value === "variable" &&
+
+        loanType.value === "Freddie" &&
+
+        otCheck.checked == false &&
+
+        bonusCheck.checked == false &&
+
+        commissionCheck.checked == false &&
+
+        tipCheck.checked == false &&
+
+        Number(ytdWVOE.value) /
+
+          Number(varTimeElapsed) /
+
+          (Number(recentWVOE.value) / Number(12)) >
+
+          Number(0.9) &&
+
+        incomeType.value === "wvoe" &&
+
+        baseIncome.value === "variable" &&
+
+        loanType.value === "Freddie" &&
+
+        otCheck.checked == false &&
+
+        bonusCheck.checked == false &&
+
+        commissionCheck.checked == false &&
+
+        tipCheck.checked == false &&
+
+        Number(ytdWVOE.value) /
+
+          Number(varTimeElapsed) /
+
+          (Number(recentWVOE.value) / Number(12)) <
+
+          Number(1.1))
+
+    ) {
+
+      if (
+
+        Number(recentWVOE.value) + Number(previousWVOE.value) / Number(24) <
+
+          Number(ytdWVOE.value) / Number(varTimeElapsed) &&
+
+        Number(recentWVOE.value) / Number(12) >
+
+          Number(previousWVOE.value) / Number(12)
+
+      ) {
+
+        var baseIncomeResult = (
+
+          (Number(recentWVOE.value) + Number(ytdWVOE.value)) /
+
+          (Number(12) + Number(varTimeElapsed))
+
+        ).toFixed(2);
+
+        qualBaseWVOE.innerText =
+
+          "$" + baseIncomeResult + "/month Variable Base Income";
+
+        console.log("increasing");
+
+      } else if (
+
+        Number(ytdWVOE.value) / Number(varTimeElapsed) <
+
+          (Number(recentWVOE.value) + Number(previousWVOE.value)) /
+
+            Number(24) &&
+
+        Number(recentWVOE.value) / Number(12) <
+
+          Number(previousWVOE.value) / Number(12)
+
+      ) {
+
+        var baseIncomeResult = (
+
+          Number(ytdWVOE.value) / Number(varTimeElapsed)
+
+        ).toFixed(2);
+
+        qualBaseWVOE.innerText =
+
+          "$" + baseIncomeResult + "/month Variable Base Income";
+
+        console.log("declining");
+
+      } else {
+
+        if (
+
+          (Number(recentWVOE.value) +
+
+            Number(previousWVOE.value) +
+
+            Number(ytdWVOE.value)) /
+
+            (Number(24) + Number(varTimeElapsed)) >
+
+          (Number(recentWVOE.value) + Number(ytdWVOE.value)) /
+
+            (Number(12) + Number(varTimeElapsed))
+
+        ) {
+
+          var baseIncomeResult = (
+
+            (Number(recentWVOE.value) +
+
+              Number(previousWVOE.value) +
+
+              Number(ytdWVOE.value)) /
+
+            (Number(24) + Number(varTimeElapsed))
+
+          ).toFixed(2);
+
+          qualBaseWVOE.innerText =
+
+            "$" + baseIncomeResult + "/month Variable Base Income";
+
+          console.log("first");
+
+        } else if (
+
+          (Number(recentWVOE.value) +
+
+            Number(previousWVOE.value) +
+
+            Number(ytdWVOE.value)) /
+
+            (Number(24) + Number(varTimeElapsed)) <
+
+          (Number(recentWVOE.value) + Number(ytdWVOE.value)) /
+
+            (Number(12) + Number(varTimeElapsed))
+
+        ) {
+
+          var baseIncomeResult = (
+
+            (Number(recentWVOE.value) + Number(ytdWVOE.value)) /
+
+            (Number(12) + Number(varTimeElapsed))
+
+          ).toFixed(2);
+
+          qualBaseWVOE.innerHTML =
+
+            "$" + baseIncomeResult + "/month Variable Base Income";
+
+          console.log("second");
+
+        }
+
+      }
+
+    } else if (
+
+      (incomeType.value === "paystub" &&
+
+        baseIncome.value === "variable" &&
+
+        loanType.value === "Fannie" &&
+
+        otCheck.checked == false &&
+
+        bonusCheck.checked == false &&
+
+        commissionCheck.checked == false &&
+
+        tipCheck.checked == false) ||
+
+      (incomeType.value === "paystub" &&
+
+        baseIncome.value === "variable" &&
+
+        loanType.value === "Freddie" &&
+
+        otCheck.checked == false &&
+
+        bonusCheck.checked == false &&
+
+        commissionCheck.checked == false &&
+
+        tipCheck.checked == false &&
+
+        Number(ytdPaystub.value) /
+
+          Number(varTimeElapsed) /
+
+          (Number(recentW2.value) / Number(12)) >
+
+          Number(0.9) &&
+
+        incomeType.value === "paystub" &&
+
+        baseIncome.value === "variable" &&
+
+        loanType.value === "Freddie" &&
+
+        otCheck.checked == false &&
+
+        bonusCheck.checked == false &&
+
+        commissionCheck.checked == false &&
+
+        tipCheck.checked == false &&
+
+        Number(ytdPaystub.value) /
+
+          Number(varTimeElapsed) /
+
+          (Number(recentW2.value) / Number(12)) <
+
+          Number(1.1))
+
+    ) {
+
+      if (twoYearOptions.value == "yes") {
+
+        if (
+
+          Number(ytdPaystub.value) / Number(varTimeElapsed) >
+
+            Number(recentW2.value) / Number(12) &&
+
+          Number(recentW2.value) / Number(12) >
+
+            Number(previousW2.value) / Number(12)
+
+        ) {
+
+          var baseIncomeResult = (
+
+            (Number(ytdPaystub.value) + Number(recentW2.value)) /
+
+            (Number(12) + Number(varTimeElapsed))
+
+          ).toFixed(2);
+
+          qualBasePaystub.innerText =
+
+            "$" + baseIncomeResult + "/month Variable Income";
+
+        } else if (
+
+          Number(ytdPaystub.value) / Number(varTimeElapsed) >
+
+            Number(recentW2.value) / Number(12) &&
+
+          Number(recentW2.value) / Number(12) <
+
+            Number(previousW2.value) / Number(12)
+
+        ) {
+
+          var baseIncomeResult = (
+
+            (Number(ytdPaystub.value) +
+
+              Number(recentW2.value) +
+
+              Number(previousW2.value)) /
+
+            (Number(24) + Number(varTimeElapsed))
+
+          ).toFixed(2);
+
+          qualBasePaystub.innerText =
+
+            "$" + baseIncomeResult + "/month Variable Income";
+
+        } else if (
+
+          Number(ytdPaystub.value) / Number(varTimeElapsed) <
+
+          Number(recentW2.value) / Number(12)
+
+        ) {
+
+          var baseIncomeResult = (
+
+            Number(ytdPaystub.value) / Number(varTimeElapsed)
+
+          ).toFixed(2);
+
+          qualBasePaystub.innerText =
+
+            "$" + baseIncomeResult + "/month Variable Income";
+
+        }
+
+      } else if (twoYearOptions.value == "no") {
+
+        varTotalResult.innerText =
+
+          "Need to have 2 year's of all borrower's w2's";
+
+      }
+
+    }
+
+  } else if (varResult >= 365 && varResult < 730) {
+
+  } else {
+
+    varTotalResult.innerText =
+
+      "Borrower has been receiving variable income for < 1 year. Cannot use variable income.";
+
+  }
+
+}
+
+ 
+
+function paystub__calc() {
+
+  if (incomeType.value === "paystub") {
+
+    paystubCalculator.classList.remove("hidden");
+
+    wvoeCalculator.classList.add("hidden");
+
+    twoYear.classList.remove("hidden");
+
+    extraQuestions.classList.remove("hidden");
+
+    ytdOtRead.setAttribute("readonly", true);
+
+    ytdOtRead.value = "";
+
+    ytdOtRecent.setAttribute("readonly", true);
+
+    ytdOtRecent.value = "";
+
+    ytdOtPrev.setAttribute("readonly", true);
+
+    ytdOtPrev.value = "";
+
+    ytdCommissionRead.setAttribute("readonly", true);
+
+    ytdCommissionRead.value = "";
+
+    ytdCommissionRecent.setAttribute("readonly", true);
+
+    ytdCommissionRead.value = "";
+
+    ytdCommissionPrev.setAttribute("readonly", true);
+
+    ytdCommissionRead.value = "";
+
+    ytdTipRead.setAttribute("readonly", true);
+
+    ytdTipRead.value = "";
+
+    ytdTipRecent.setAttribute("readonly", true);
+
+    ytdTipRead.value = "";
+
+    ytdTipPrev.setAttribute("readonly", true);
+
+    ytdTipRead.value = "";
+
+  } else if (incomeType.value === "wvoe") {
+
+    wvoeCalculator.classList.remove("hidden");
+
+    paystubCalculator.classList.add("hidden");
+
+    twoYear.classList.add("hidden");
+
+    extraQuestions.classList.remove("hidden");
+
+    ytdOtRead.removeAttribute("readonly");
+
+    ytdOtRecent.removeAttribute("readonly");
+
+    ytdOtPrev.removeAttribute("readonly");
+
+    ytdCommissionRead.removeAttribute("readonly");
+
+    ytdCommissionRecent.removeAttribute("readonly");
+
+    ytdCommissionPrev.removeAttribute("readonly");
+
+    ytdTipRead.removeAttribute("readonly");
+
+    ytdTipRecent.removeAttribute("readonly");
+
+    ytdTipPrev.removeAttribute("readonly");
+
+  } else {
+
+    paystubCalculator.classList.add("hidden");
+
+    wvoeCalculator.classList.add("hidden");
+
+    twoYear.classList.add("hidden");
+
+    extraQuestions.classList.add("hidden");
+
+  }
+
+}
+
+ 
+
+function ot__appear() {
+
+  otSection.classList.toggle("hidden");
+
+  ytdOT.classList.toggle("hidden");
+
+}
+
+function commission__appear() {
+
+  commissionSection.classList.toggle("hidden");
+
+  ytdCommission.classList.toggle("hidden");
+
+}
+
+function tip__appear() {
+
+  tipSection.classList.toggle("hidden");
+
+  ytdTip.classList.toggle("hidden");
+
+}
+
+function positive__appear() {
+
+  var dateI1 = document.getElementById("varStartDate").value;
+
+  var dateI2 = document.getElementById("varPayDate").value;
+
+  var date1 = new Date(dateI1);
+
+  var date2 = new Date(dateI2);
+
+  var time_difference = date2.getTime() - date1.getTime();
+
+  var varResultPositive = Number(time_difference) / (1000 * 60 * 60 * 24);
+
+ 
+
+  if (Number(varResultPositive) > 364 && Number(varResultPositive) < 730) {
+
+    positiveFactors.classList.remove("hidden");
+
+  } else {
+
+    positiveFactors.classList.add("hidden");
+
+  }
+
+}
+
+function bonus__question() {
+
+  bonusQuestion.classList.toggle("hidden");
+
+}
+
+function clearAll() {
+
+  qualBasePaystub.innerText = "";
+
+  qualBaseWVOE.innerText = "";
+
+  qualOt.innerText = "";
+
+  qualComm.innerText = "";
+
+  qualTip.innerText = "";
+
+  varTotalResult.innerText = "";
+
+}
+
  
 
 // Schedule C
@@ -864,7 +1534,7 @@ schedecalc.addEventListener("click", () => {
 
       schederecentResult < schedeprevResult
 
-    ) {
+   ) {
 
       var schedeResult = (schederecentResult / Number(12)).toFixed(2);
 

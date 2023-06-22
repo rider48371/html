@@ -187,7 +187,7 @@
       <form action="variable">
         <div class="columns center">
           <label for="start__date">Start Date with Employer</label>
-          <input type="date" class="mb-3" id="start__date">
+          <input type="date" id="varStartDate">
           <label>Loan Program</label>
           <select class="mb-3 "id="loan__type">
             <option>Select One:</option>
@@ -196,43 +196,148 @@
             <option value="FHA">FHA</option>
           </select>
           <label>Documentation to calculate</label>
-          <select class="mb-3" id="">
+          <select class="mb-3" id="income__type" onchange="paystub__calc()">
             <option>Select One:</option>
             <option value="paystub">Paystub/W2</option>
-            <option value="WVOE">WVOE/VOI</option>
+            <option value="wvoe">WVOE/VOI</option>
           </select>
-          <label>Do we have 2 years of w-2's from current employer on file?</label>
-          <select class="mb-3" id="2year" disabled>
-            <option>Select One:</option>
-            <option>Yes</option>
-            <option>No</option>
-          </select>
-          <label>Is base income variable or full time hourly/salary?</label>
-          <select class="mb-3" id="base__income" disabled>
-            <option>Select One:</option>
-            <option>Variable</option>
-            <option>Salary/Hourly</option>
-          </select>
-          <div class="using columns" id="using">
-            <label>Are we using: <span>Check all that apply</span> </label>
-            <div class="checkbox__group">
-              <label>Overtime</label>
-              <input type="checkbox" id="ot__check" disabled>
+          <div class="columns center hidden" id="2year">
+            <label>Do we have 2 years of w-2's from current employer on file?</label>
+            <select class="mb-3" id="twoyear">
+              <option>Select One:</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div class="hidden" id="extra__questions">
+            <div class="columns center">
+              <label>Is base income variable or full time hourly/salary?</label>
+              <select class="mb-3" id="base__income">
+                <option>Select One:</option>
+                <option value="variable">Variable</option>
+                <option value="salary">Salary/Hourly</option>
+              </select>
             </div>
-            <div class="checkbox__group">
-              <label>Bonus</label>
-              <input type="checkbox" id="bonus__check" disabled>
+            <div class="using columns" id="using">
+              <label>Are we using: <span>Check all that apply</span> </label>
+              <div class="checkbox__group">
+                <label>Overtime</label>
+                <input type="checkbox" id="ot__check" onchange="ot__appear()">
+              </div>
+              <div class="checkbox__group">
+                <label>Bonus</label>
+                <input type="checkbox" id="bonus__check" onchange="bonus__question()"><br>
+              </div>
+              <div class="checkbox__group hidden" id="bonus__question">
+                <label>Is Bonus Received more than once per year?</label><br>
+                <label>Yes</label>
+                <input type="checkbox" id="affirm" style="margin-right: 20px;">
+                <label>No</label>
+                <input type="checkbox" id="negative">
+              </div>
+              <div class="checkbox__group">
+                <label>Commission</label>
+                <input type="checkbox" id="comm__check" onchange="commission__appear()">
+              </div>
+              <div class="checkbox__group">
+                <label>Tip</label>
+                <input type="checkbox" class="mb-3" id="tip__check" onchange="tip__appear()">
+              </div>
             </div>
-            <div class="checkbox__group">
-              <label>Commission</label>
-              <input type="checkbox" id="comm__check" disabled>
+            <div class="columns center">
+              <label>Pay Period End Date</label>
+              <input type="date" class="mb-3" id="varPayDate" onchange="positive__appear()">
+              <!-- <input type="number" id="varMonthEl" placeholder="Pay Period Month">
+              <input type="number" id="varDayEl" placeholder="Pay Period Day">
+              <input type="number" id="varYearEl" placeholder="Pay Period Year"> -->
             </div>
-            <div class="checkbox__group">
-              <label>Tip</label>
-              <input type="checkbox" id="tip__check" disabled>
+            <div class="hidden columns center" id="positive__factors">
+              <label class="mb-3">Choose your positive factors. (Select all that apply)</label>
+              <div class="checkbox__element">
+                <label>Borrower is in the same line of work as previous employer</label>
+                <input type="checkbox">
+              </div>
+              <div class="checkbox__element">
+                <label>Borrower has been at current employer for 18-24 months</label>
+                <input type="checkbox">
+              </div>
+              <div class="checkbox__element">
+                <label>Borrower was with previous employer for 2+ years</label>
+                <input type="checkbox">
+              </div>
+              <div class="checkbox__element">
+                <label>There are additioanl income types not being used</label>
+                <input type="checkbox">
+              </div>
+              <div class="checkbox__element">
+                <label>Borrower has a previous history of variable income</label>
+                <input type="checkbox">
+              </div>
+              <div class="checkbox__element">
+                <label>Borrower is in a "in demand business" (e.g. Nurse)</label>
+                <input type="checkbox">
+              </div>
+              <div class="checkbox__element">
+                <label>There are no gaps in employment (30+ days)</label>
+                <input type="checkbox">
+              </div>
+              <div class="checkbox__element">
+                <label>Borrower completed schooling or training to get into their current position</label>
+                <input type="checkbox">
+              </div>
+              <div class="checkbox__element">
+                <label>Borrower has a history of multiple jobs earning the same type of variable income</label>
+                <input type="checkbox">
+              </div>
+              <div class="checkbox__element">
+                <label>Consistent increases from oldest to current employer for overall income</label>
+                <input type="checkbox" class="mb-3">
+              </div>
             </div>
           </div>
+          <div class="columns center hidden mb-3" id="paystub__calculator">
+            <h2>Paystub/W-2 Calculator</h2>
+            <input type="number" class="mb-3" id="ytd__paystub" placeholder="YTD base income from paystub">
+            <input type="number" class="mb-3" id="recent__w2" placeholder="Most recent w2 income">
+            <input type="number" class="mb-3" id="previous__w2" placeholder="Previous w2 income">
+            <input type="number" class="mb-3 hidden" id="ytd__ot" placeholder="YTD OT from Paystub">
+            <input type="number" class="mb-3 hidden" id="ytd__bonus" placeholder="YTD Bonus from Paystub">
+            <input type="number" class="mb-3 hidden" id="ytd__commission" placeholder="YTD Commission from Paystub">
+            <input type="number" class="mb-3 hidden" id="ytd__tip" placeholder="YTD Tip Income from Paystub">
+            <p class ="result" id="qualifying__base-paystub"></p>
+          </div>
+          <div class="columns center hidden mb-3" id="wvoe__calculator">
+            <h2>WVOE/VOI Calculator</h2>
+            <input type="number" class="mb-3" id="ytd__wvoe" placeholder="YTD Base Income">
+            <input type="number" class="mb-3" id="recent__wvoe" placeholder="Most Recent Year Base Income">
+            <input type="number" class="mb-3" id="previous__wvoe" placeholder="Previous Year Base Income">
+            <p class="result" id="qualifying__base-wvoe"></p>
+          </div>
+          <div class="ot__calculator columns center mb-3 hidden" id="ot__section">
+            <h2>Overtime Calculator</h2>
+            <input type="text" class="mb-3" id="ytd__ot-read" placeholder="YTD OT Income">
+            <input type="text" class="mb-3" id="recent__ot-w2" placeholder="Last Year's OT Income">
+            <input type="text" class="mb-3" id="previous__ot-w2" placeholder="Previous Year's OT Income">
+            <p class="result" id="ot__qualifying"></p>
+          </div>
+          <div class="commission__calculator columns center mb-3 hidden" id="commission__section">
+            <h2>Commission Calculator</h2>
+            <input type="text" class="mb-3" id="ytd__commission-read" placeholder="YTD Commission Income">
+            <input type="text" class="mb-3" id="recent__commission-w2" placeholder="Last Year's Commission Income">
+            <input type="text" class="mb-3" id="previous__commission-w2" placeholder="Previous Year's Commission Income">
+            <p class="result" id="commission__qualifying"></p>
+          </div>
+          <div class="tip__calculator columns center mb-3 hidden" id="tip__section">
+            <h2>Tip Calculator</h2>
+            <input type="text" class="mb-3" id="ytd__tip-read" placeholder="YTD Tip Income">
+            <input type="text" class="mb-3" id="recent__tip-w2" placeholder="Last Year's Tip Income">
+            <input type="text" class="mb-3" id="previous__tip-w2" placeholder="Previous Year's Tip Income">
+            <p class="result" id="tip__qualifying"></p>
+          </div>
         </div>
+        <input type="button" class="calc mb-3" id=varcalc value="Calculate" style="width: 100%;" onclick="daysDifference()">
+        <input type="button" class="calc mb-3" id="resetCalc" value ="Clear all Calculations" style="width: 100%;" onclick="clearAll()">
+        <p class="result" id="varTotalResult"></p>
       </form>
     </div>
     <div class="hide bg-primary-subtle" id="schedulecform">
