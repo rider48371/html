@@ -2,7 +2,7 @@ const twoYear = document.querySelector('.twoyear__form');
 
 const twoYear__btn = document.querySelector('.twoyear__btn');
 
- 
+
 
 twoYear__btn.addEventListener('click', () => {
 
