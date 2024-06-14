@@ -3,6 +3,7 @@ import { About, Explore, Feedback, GetStarted, Hero, Insights, WhatsNew, World }
 
 const Page = () => (
   <div>
+    <div className="bg-primary-black overflow-hidden">
     <Navbar />
     <Hero />
     <About />
@@ -13,6 +14,8 @@ const Page = () => (
     <Insights />
     <Feedback />
     <Footer />
+    </div>
+    
   </div>
 );
 
