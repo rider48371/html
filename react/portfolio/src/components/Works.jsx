@@ -72,6 +72,7 @@ const Works = () => {
       className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
       viewport={{once: true, amount: 0.25}}
       >
+        <span className="hash-span" id="work"></span>
         <motion.div variants="textVariant()">
           <p className={styles.sectionSubText}>
             My Work
