@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import './Feed.css'
 import { Link } from 'react-router-dom'
-import {API_KEY, value_converter} from '../../data.js'
+import { value_converter} from '../../data.js'
 import moment from 'moment'
+
+const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
 
 const Feed = ({category}) => {
 
     const [data,setData] = useState([]);
 
     const fetchData = async()=>{
-        const videoList_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostpopular&maxResults=50&regionCode=US&videoCategoryId=${category}&key=${API_KEY}`;
+        const videoList_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostpopular&maxResults=50&regionCode=US&videoCategoryId=${category}&key=${apiKey}`;
         await fetch(videoList_url).then(response=>response.json()).then(data=>setData(data.items))
     }
 
