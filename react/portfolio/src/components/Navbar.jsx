@@ -21,9 +21,9 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-20 h-20 object-contain" />
+          <img src={logo} alt="logo" className="w-20 h-20 rounded-full object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer">
-            Rider Web Services
+            Fred Rider     |     Velocity Designs
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">

@@ -54,7 +54,7 @@ import {
       icon: backend,
     },
     {
-      title: "Content Creator",
+      title: "Brand Builder & Product Promoter",
       icon: creator,
     },
   ];
@@ -173,9 +173,9 @@ import {
     {
       testimonial:
         "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
+      name: "Anthony Hill",
+      designation: "CEO",
+      company: "Another Detroit House",
       image: "https://randomuser.me/api/portraits/women/4.jpg",
     },
     {
@@ -200,10 +200,10 @@ import {
     {
       name: "Netflix Clone",
       description:
-        "Clone of the Netflix website, built using HTML CSS and JavaScript.",
+        "Clone of the Netflix website, built using React, CSS, and Firebase to store login access.",
       tags: [
         {
-          name: "HTML",
+          name: "React",
           color: "blue-text-gradient",
         },
         {
@@ -211,54 +211,50 @@ import {
           color: "green-text-gradient",
         },
         {
-          name: "Javascript",
+          name: "FireBase",
           color: "pink-text-gradient",
         },
       ],
       image: carrent,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/rider48371/html/tree/8ad4ca8025d6afdd99748b1934e81d9765e5da92/react/netflix-clone",
     },
     {
-      name: "Job IT",
+      name: "YouTube Clone",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "Working clone of using the YouTube API. Pulls in the popular videos and multiple categories and plays the actual videos from YouTube. Built with React, CSS, and the Google API",
       tags: [
         {
           name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
+          name: "CSS",
           color: "green-text-gradient",
         },
         {
-          name: "scss",
+          name: "Google API",
           color: "pink-text-gradient",
         },
       ],
       image: jobit,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/rider48371/html/tree/8ad4ca8025d6afdd99748b1934e81d9765e5da92/react/youtube-clone",
     },
     {
-      name: "Trip Guide",
+      name: "CryptoPlace",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "A comprehensive crypto page utilizing active search of coins, real-time coin data, and the top coins in the world at any given time.",
       tags: [
         {
-          name: "nextjs",
+          name: "React",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "CSS",
           color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
         },
       ],
       image: tripguide,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/rider48371/html/tree/8ad4ca8025d6afdd99748b1934e81d9765e5da92/react/cryptoplace",
     },
   ];
   
